@@ -1,0 +1,78 @@
+{
+ "label": "Linking each CLI",
+ "lanes": [
+  {
+   "label": "Run",
+   "nodes": [
+    {
+     "id": "c1",
+     "kind": "start",
+     "title": "npm run cli -- supabase link"
+    },
+    {
+     "id": "c2",
+     "kind": "start",
+     "title": "npm run cli -- vercel link"
+    }
+   ]
+  },
+  {
+   "label": "Token",
+   "nodes": [
+    {
+     "id": "a1",
+     "kind": "manual",
+     "title": "SUPABASE_ACCESS_TOKEN",
+     "sub": "From ops/.env"
+    },
+    {
+     "id": "a2",
+     "kind": "manual",
+     "title": "VERCEL_TOKEN",
+     "sub": "From ops/.env"
+    }
+   ]
+  },
+  {
+   "label": "Link state",
+   "nodes": [
+    {
+     "id": "s1",
+     "kind": "hold",
+     "tag": "Not linked",
+     "title": "supabase/.temp/",
+     "sub": "Ignored by supabase/.gitignore"
+    },
+    {
+     "id": "s2",
+     "kind": "hold",
+     "tag": "Not linked",
+     "title": ".vercel/project.json",
+     "sub": "Ignored by .gitignore"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "c1",
+   "a1",
+   ""
+  ],
+  [
+   "c2",
+   "a2",
+   ""
+  ],
+  [
+   "a1",
+   "s1",
+   ""
+  ],
+  [
+   "a2",
+   "s2",
+   ""
+  ]
+ ]
+}

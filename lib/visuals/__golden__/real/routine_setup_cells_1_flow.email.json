@@ -1,0 +1,1 @@
+[["This machine",[["Start","ops/.env","GITHUB_TOKEN, gitignored",["read on start: Local server"]],["Manual","Local server","127.0.0.1:8787, reads the token",["API and git over HTTPS: GitHub"]]]],["GitHub",[["Target","GitHub","token sent by the server only",[]]]]]

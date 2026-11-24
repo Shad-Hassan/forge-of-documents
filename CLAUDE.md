@@ -1,104 +1,133 @@
-# CLAUDE.md
+---
+title: Forge of Documents II — app
+aliases: [Forge app, Engine of Artifact]
+tags: [forge, claude-code, nextjs, rag, artifacts, editor]
+updated: 2026-11-24
+plan: ../designRules/FORGE-SAAS-PLAN.md
+design: ../designRules/ui-ux-benchmark.md
+---
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+# Forge of Documents II
 
-## Quick Commands
+Shad's private **Engine of Artifact** and the **one renderer** for his artifact families. One user, local only.
+Ask the artifact universe → cited answer → forge a versioned document → edit it live → render it everywhere.
+
+> [!important] One renderer
+> TypeScript in `lib/families/` is the only renderer. The skills' Python builders are shims that call `forge.sh render` (cutover 2026-11-24, proven byte-identical on every real draft). The frozen originals are `*_legacy.py`, read-only. **Change a look here, never in Python.**
+
+## Run
 
 ```bash
-# Local development
-npm run dev              # Start dev server on localhost:3000
-npm run build           # Build for production
-npm start               # Start production server
-
-# Or use the shell script (from anywhere)
-forge-document          # Spins up dev server (requires .env.local configured)
+../forge.sh                    # dev server, checks deps + key, prints URLs (--open, PORT=3100)
+../forge.sh render <family> <draft.json> [--kinds …] [--out dir] [--name stem] [--eml] [--check]
+forge-document                 # same launcher from anywhere (~/.local/bin wrapper)
+npm run build                  # must pass before claiming done
 ```
 
-## Architecture
+UI: `/chat` (premium thread + session catalog) · `/engine` (Ask · Library · Documents · Forge) · `/engine/docs/<id>` (editor) · **`/status` (2-minute read: what this is, what's done, where it stands, the benchmark; source `docs/STATUS.md`)** · `/` (original generator).
 
-**Forge of Documents II** is a fullstack Next.js document generation harness. Users configure "dials" (parameters) for different document types, and Claude generates documents via the Anthropic API.
+**Backend** (`lib/engine/backend.ts`): `FORGE_BACKEND=auto|api|cli`. `auto` = API when the key looks real, else **headless Claude Code on Shad's login** (`lib/cli/claude.ts`). Today: cli (the `.env.local` key is an 11-char stub). Personal, local use only.
 
-### Data Flow
+## Flow
 
-1. **Frontend** (`/app/components/DocumentGenerator.tsx`): React UI with type selector and dial inputs
-2. **API Route** (`/api/generate/route.ts`): POST endpoint that constructs prompts and calls Claude
-3. **Config** (`/lib/config.ts`): Defines all document types, their dials, and system prompts
-4. **Styling** (`/app/globals.css` + `tailwind.config.ts`): Cosmology colors (void, ivory, bronze, arcane, ember)
+```
+question ─► router ─► search loop ─► cited answer ─► forge ─► doc v1 ─► edit / revise ─► v2, v3 …
+            rules→Haiku  Opus + grep    search_result   strict schema   draft.json + outputs + note
+```
 
-### Key Files
+| Stage | Where | Notes |
+|---|---|---|
+| Router | `lib/ask/router.ts` | Regex fast path (0 tokens), then `claude-haiku-5-5` structured output |
+| Search loop | `app/api/ask`, `lib/ask/tools.ts` | Tool Runner, `claude-opus-5-5`, `search`/`read`/`list` over `lib/search` |
+| Forge | `app/api/forge`, `lib/forge/forge.ts` | `messages.parse` + family generation schema → `createDoc` |
+| Store | `lib/docs/store.ts` | `data/out/<id>/doc.json` + immutable `v<n>/` (draft, outputs, note). **Append-only** |
+| Edit | `PUT /api/docs/<id>` | Validate → re-render → new version. $0, no Claude |
+| Revise | `POST /api/docs/<id>/revise` | Claude proposes a draft; the editor shows a diff; Accept → PUT |
+| Editor | `components/engine/DocEditor.tsx` | Live preview rendered **in the browser** by the same TS renderers |
+| Chat | `/chat`, `lib/chat/{store,ask}.ts`, `app/api/chat/**` | `data/chats/<id>.json` (append-only turns), SSE stream: user → activity → done; quotes verified against files; Stop kills the CLI process group |
+| Status | `/status`, `docs/STATUS.md`, `components/status/ObsidianNote.tsx` | Obsidian note rendered as-is, plus live counters. **Update STATUS.md when things change** |
 
-| File | Purpose |
-|------|---------|
-| `lib/config.ts` | Document type definitions and dial specifications. Add new types here. |
-| `api/generate/route.ts` | Backend endpoint: validates request, builds prompt, calls Claude API, returns content + metadata |
-| `components/DocumentGenerator.tsx` | UI component: document type picker, dial rendering, copy/download buttons, loading states |
-| `tailwind.config.ts` | Tailwind theme with cosmology color palette |
-| `app/globals.css` | CSS variables tied to cosmology colors (void, ivory, bronze, etc.) |
-| `.env.example` | Template for environment variables; copy to `.env.local` and add `ANTHROPIC_API_KEY` |
+## Routes and pages
 
-## Extending: Add a Document Type
+| Route | Does |
+|---|---|
+| `/chat` · `/engine` · `/engine/docs/<id>` · `/status` · `/` | Chat · engine · editor · status · original generator |
+| `POST /api/chat` · `GET /api/chat` | New session · catalog (+ backend status) |
+| `GET/PATCH /api/chat/<id>` · `POST /api/chat/<id>/message` | Thread, rename/archive · send (SSE: user, activity, thinking, done, error) |
+| `POST /api/ask` | One-off cited answer (API: Tool Runner; cli: same engine as chat) |
+| `POST /api/forge` | Answer → versioned doc (both backends) |
+| `GET /api/docs` · `GET/PUT /api/docs/<id>` · `POST /api/docs/<id>/revise` | List · read/save version · Claude proposal |
+| `POST /api/upload` · `GET/DELETE /api/library` | Uploads into `data/uploads` · list/delete |
+| `GET /api/out?path=` | Read-only, sandboxed (CSP) preview of `data/out` files; escapes → 403 |
+| `POST /api/generate` | The original one-shot generator behind `/` (`lib/templates/`, API only) |
 
-1. Open `lib/config.ts`
-2. Add a new entry to the `documentTypes` object:
-   ```typescript
-   "new-type": {
-     name: "Display Name",
-     description: "Short description",
-     dials: [
-       { name: "Dial Name", key: "dial_key", type: "select", options: ["a", "b"], default: "a" },
-       // ... more dials
-     ],
-     systemPrompt: "Claude instructions for this document type",
-   }
-   ```
-3. Frontend and API will auto-detect the new type (TypeScript enforces the type union at compile time)
+Runtime data (gitignored): `data/uploads/` · `data/out/<id>/` (docs) · `data/chats/` · `data/textcache/` (PDF text for grep).
 
-### Dial Types
+## Families (renderers)
 
-- `select`: dropdown menu (requires `options` array)
-- `text`: text input field
-- `number`: numeric input
-- `slider`: range input (requires `min`, `max`)
+| Id | Ports (frozen original) | Kinds | Skill |
+|---|---|---|---|
+| `replycast` | `replyCast/build_legacy.py` | email, paste | /replyCast |
+| `plexio` | `artifactHtml/src/build_note_legacy.py` | email, text, web (+ `.eml` alternative) | /plexio note mode |
+| `warden` | `warden_base.py` + `warden_email.py` | email (block draft) | /warden email |
+| `athena` | `athena_base.py` (frozen) | web (bento blocks, Gen 3) | /athena |
+| `thread` (CLI only) | `replyCast/thread_legacy.py` | `.thread.html` | /replyCast hard mode |
 
-## Setup & Environment
+Each family: `schema.ts` (renderer contract = Python draft shape), `render.ts`, `generation.ts` (strict Claude-facing schema + `toDraft`), `index.ts`. Registry: `lib/families/index.ts`. Visual primitives: `lib/visuals/` (flowmode, warden_flow, citadel).
 
-- **API Key**: Set `ANTHROPIC_API_KEY` in `.env.local` (never commit)
-- **Model**: Currently hardcoded to `claude-opus-4-1` in `api/generate/route.ts`; change the string to switch models
-- **Max Tokens**: Set to 4096 in the API route; adjust per document type if needed
+**Add a family:** folder + register in `lib/families/index.ts` + id in `FamilyId` (`lib/engine/types.ts`) + goldens + an output rule in `scripts/forge-render.ts` (the CLI behind `forge.sh render`).
 
-## Deployment
+## Receipts (no API calls)
 
-**Vercel** (recommended):
 ```bash
-vercel
-# Set ANTHROPIC_API_KEY in Vercel dashboard environment variables
+npx tsx scripts/golden.ts <family> <kind> <draft.json> <expected>   # TS vs Python output
+npx tsx scripts/drift.ts                 # every real draft vs golden/drift/expected (57/57)
+python3 -I scripts/drift-regen.py         # rebuild that expected set from the FROZEN *_legacy.py (never the shims)
+npx tsx scripts/threadcheck.ts            # threads (2/2)
+npx tsx scripts/gencheck.ts               # generation round-trips (9)
+npx tsx scripts/schemacheck.ts            # schemas → structured output (4/4)
+npx tsx scripts/forgecheck.ts             # forge + store: v1, v2, v1 immutable, rejects
+npx tsx scripts/tokencheck.ts [athena|warden]   # contrast (== Python --check)
+npx tsx lib/visuals/golden.ts             # 128 SVG cases
+npx tsx lib/search/selftest.ts && npx tsx lib/uploads/selftest.ts
+npx tsc --noEmit -p . && npm run build
 ```
 
-**Self-hosted**:
-```bash
-npm run build
-npm start
-# Set ANTHROPIC_API_KEY in environment before running
-```
+## Env
 
-## Styling Notes
+| Var | Effect |
+|---|---|
+| `ANTHROPIC_API_KEY` | Ask, Forge, Revise |
+| `FORGE_EML_FROM` | Enables `.eml` (nothing hardcoded in the app; the build_note shim sets it) |
+| `FORGE_OBSIDIAN_DIR` | Copies each version's `.md` note into that vault folder |
+| `FORGE_BACKEND` | `auto` (default) · `api` · `cli` |
+| `FORGE_CHAT_MODEL` | Chat model (default `claude-opus-5-5`; tests use `claude-haiku-5-5`) |
+| `FORGE_CLAUDE_BIN` · `FORGE_CHATS_DIR` | CLI path override · chat store path (tests) |
+| `FORGE_ARTIFACTS_ROOT` · `FORGE_UPLOADS_ROOT` · `FORGE_OUT_DIR` · `FORGE_TEXTCACHE` | Path overrides (tests use them) |
 
-- **Colors**: Dark void background (#0b0f1a), ivory text (#f5f1e8), bronze accent (#a67c52)
-- **Typography**: JetBrains Mono for body, Cinzel Decorative available for titles
-- **Contrast**: All text meets WCAG AA (4.5:1 minimum); no muted text
-- **Borders**: Slate colors for borders only; never use slate on text
-- **Components**: Sharp corners (border-radius: 0) unless explicitly designed otherwise
+## Rules that bite
 
-## Common Patterns
+- **Shad's words are the content.** Renderers and fixtures never add labels, titles, emphasis or text the source lacks.
+- **Evidence:** versions are immutable; client-facing docs show a notice; never overwrite a `v<n>/`.
+- **Renderers are pure** (no I/O, clock, randomness). I/O lives in `renderAsync`, `load.ts` or the store.
+- **No `export const runtime`** (cacheComponents rejects it); dynamic pages read `params` inside `<Suspense>`.
+- **Routes live in `app/api/`.** Dynamic route params: `{ params: Promise<{ id: string }> }`.
+- **Forced `tool_choice` returns 400 on `claude-opus-5-5`:** use `messages.parse` + `zodOutputFormat`. Citations and `output_config.format` can't share a request.
+- **Strict schemas:** no `z.record`/`z.tuple`/`z.any`/`.passthrough()` in `generation.ts`; `.min()` only 0 or 1.
+- **Scripts need module scope** (`export {}` or an import), or their `main()` collide.
+- **`forge-render` output dirs:** replycast and Forge-native families write beside the draft; only plexio writes to the fixed `artifactHtml/drafts`. Test with `--out <scratch>`.
+- **Headless CLI isolation:** `--setting-sources ""` + own `--system-prompt` + `--strict-mcp-config` + `--disable-slash-commands` + `--no-session-persistence` + `--tools Read,Grep,Glob` + `--permission-mode dontAsk` + `--restricted`. Never `--bare` (it ignores the OAuth login). Never `--resume` (it writes into `~/.claude/projects`).
+- **Never invent greetings, closings, signatures or seals:** generation schemas make them optional, and the prompts forbid them.
+- **`grep`/`rg` in Claude Code's shell are wrappers.** The app calls `/usr/bin/grep` (GNU 3.11) by path.
+- **Contrast floor 4.5:1.** Ivory on bronze = 3.31:1 (fails); use void-900 on bronze-600 (5.13:1).
+- **artifactHtml is read-only** for tests. Never run a `build_*.py` in place.
 
-**To adjust Claude behavior**: Edit the `systemPrompt` field in `lib/config.ts` for the target document type.
+## Still Python (not ported yet)
 
-**To add UI controls**: Edit `dials` array in `lib/config.ts` and they appear in the UI automatically.
+plexio hard mode (`hard_mode.py`, Synergy Universe skin, `hero_blackhole.py`), plexio `survey-report` / `thread-record` / hard flowmode web, and warden cosmic web + print (`warden_base.py`, `warden_world.py`). The warden tokens exist in both languages: after a token change, run both checks.
 
-**To change API endpoint response**: Modify `api/generate/route.ts` — the response includes content, model, and tokens used.
+## Known gaps
 
-## Debugging
-
-- **API errors**: Check browser console (Network tab) and server logs (`npm run dev` output)
-- **Missing .env.local**: Script will catch this; create it and add your Anthropic API key
-- **TypeScript errors**: The `DocumentType` union enforces valid types; if adding a type, update the type definition first
+- PDF printing is blocked by AppArmor (`apparmor_restrict_unprivileged_userns=1`). Needs Shad's call.
+- API-path receipts for Ask, Forge and Revise wait on credits (the CLI path is verified live: chat, follow-up, escape denied, Stop, forge).
+- athena template chrome (sidebar brand, topbar title, callout tone labels) awaits Shad's call.

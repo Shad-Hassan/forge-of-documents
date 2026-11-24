@@ -1,0 +1,77 @@
+{
+ "label": "Clone",
+ "lanes": [
+  {
+   "label": "Request",
+   "nodes": [
+    {
+     "id": "c1",
+     "kind": "start",
+     "title": "POST /api/git/clone",
+     "sub": "owner, repo, parent"
+    }
+   ]
+  },
+  {
+   "label": "Checks",
+   "nodes": [
+    {
+     "id": "c2",
+     "kind": "decision",
+     "title": "Parent under the citadel root?",
+     "sub": "must exist"
+    },
+    {
+     "id": "c3",
+     "kind": "decision",
+     "title": "Target folder already there?",
+     "sub": "parent/repo"
+    }
+   ]
+  },
+  {
+   "label": "Result",
+   "nodes": [
+    {
+     "id": "c4",
+     "kind": "hold",
+     "title": "Refused",
+     "sub": "400 or 409, nothing cloned"
+    },
+    {
+     "id": "c5",
+     "kind": "target",
+     "title": "Cloned",
+     "sub": "ok true, target path returned"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "c1",
+   "c2",
+   ""
+  ],
+  [
+   "c2",
+   "c3",
+   "yes"
+  ],
+  [
+   "c2",
+   "c4",
+   "no"
+  ],
+  [
+   "c3",
+   "c4",
+   "yes"
+  ],
+  [
+   "c3",
+   "c5",
+   "no"
+  ]
+ ]
+}

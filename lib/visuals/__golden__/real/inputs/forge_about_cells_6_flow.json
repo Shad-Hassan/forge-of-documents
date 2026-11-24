@@ -1,0 +1,116 @@
+{
+ "label": "The first session, in order",
+ "lanes": [
+  {
+   "label": "First",
+   "nodes": [
+    {
+     "id": "h1",
+     "kind": "target",
+     "tag": "1",
+     "title": "Its own GitHub account"
+    },
+    {
+     "id": "h2",
+     "kind": "target",
+     "tag": "2",
+     "title": "The app itself"
+    },
+    {
+     "id": "h3",
+     "kind": "target",
+     "tag": "3",
+     "title": "Website and database tools"
+    }
+   ]
+  },
+  {
+   "label": "Then",
+   "nodes": [
+    {
+     "id": "h4",
+     "kind": "target",
+     "tag": "4",
+     "title": "A private folder"
+    },
+    {
+     "id": "h5",
+     "kind": "target",
+     "tag": "5",
+     "title": "The rules"
+    },
+    {
+     "id": "h6",
+     "kind": "target",
+     "tag": "6",
+     "title": "The look"
+    }
+   ]
+  },
+  {
+   "label": "Finally",
+   "nodes": [
+    {
+     "id": "h7",
+     "kind": "target",
+     "tag": "7",
+     "title": "From a list to a guide"
+    },
+    {
+     "id": "h8",
+     "kind": "target",
+     "tag": "8",
+     "title": "A name and a map"
+    },
+    {
+     "id": "h9",
+     "kind": "target",
+     "tag": "9",
+     "title": "The task tracker"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "h1",
+   "h2",
+   ""
+  ],
+  [
+   "h2",
+   "h3",
+   ""
+  ],
+  [
+   "h3",
+   "h4",
+   ""
+  ],
+  [
+   "h4",
+   "h5",
+   ""
+  ],
+  [
+   "h5",
+   "h6",
+   ""
+  ],
+  [
+   "h6",
+   "h7",
+   ""
+  ],
+  [
+   "h7",
+   "h8",
+   ""
+  ],
+  [
+   "h8",
+   "h9",
+   ""
+  ]
+ ]
+}

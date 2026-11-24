@@ -1,0 +1,64 @@
+{
+ "label": "Where each word lives",
+ "lanes": [
+  {
+   "label": "Online",
+   "nodes": [
+    {
+     "id": "u1",
+     "kind": "start",
+     "title": "GitHub",
+     "sub": "Home for code"
+    },
+    {
+     "id": "u2",
+     "kind": "start",
+     "title": "Vercel",
+     "sub": "Puts websites live"
+    },
+    {
+     "id": "u3",
+     "kind": "start",
+     "title": "Supabase",
+     "sub": "Hosted database"
+    },
+    {
+     "id": "u4",
+     "kind": "start",
+     "title": "Lovable",
+     "sub": "AI website builder"
+    }
+   ]
+  },
+  {
+   "label": "This computer",
+   "nodes": [
+    {
+     "id": "l1",
+     "kind": "manual",
+     "title": "Obsidian vault",
+     "sub": "One folder of notes"
+    },
+    {
+     "id": "l2",
+     "kind": "manual",
+     "title": "Keys",
+     "sub": "Passwords for programs"
+    },
+    {
+     "id": "l3",
+     "kind": "manual",
+     "title": "Localhost",
+     "sub": "Nobody else can reach it"
+    },
+    {
+     "id": "l4",
+     "kind": "manual",
+     "title": "panel",
+     "sub": "Starts the control room"
+    }
+   ]
+  }
+ ],
+ "edges": []
+}

@@ -1,0 +1,80 @@
+{
+ "label": "Done and waiting",
+ "lanes": [
+  {
+   "label": "Working now",
+   "nodes": [
+    {
+     "id": "w1",
+     "kind": "target",
+     "title": "panel starts it, 8 pages open"
+    },
+    {
+     "id": "w2",
+     "kind": "target",
+     "title": "Both vaults as 3D snapshots"
+    },
+    {
+     "id": "w3",
+     "kind": "target",
+     "title": "Task tracker works"
+    }
+   ]
+  },
+  {
+   "label": "Waiting on you",
+   "nodes": [
+    {
+     "id": "q1",
+     "kind": "hold",
+     "tag": "Blocker",
+     "title": "Add the GitHub key",
+     "kind_if_clear": "target",
+     "tag_if_clear": "Done"
+    },
+    {
+     "id": "q2",
+     "kind": "manual",
+     "title": "Create the online repo"
+    },
+    {
+     "id": "q3",
+     "kind": "manual",
+     "title": "Fill in the passwords"
+    },
+    {
+     "id": "q4",
+     "kind": "manual",
+     "title": "Connect Vercel and Supabase"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "w1",
+   "w2",
+   ""
+  ],
+  [
+   "w2",
+   "w3",
+   ""
+  ],
+  [
+   "q1",
+   "q2",
+   ""
+  ],
+  [
+   "q2",
+   "q3",
+   ""
+  ],
+  [
+   "q3",
+   "q4",
+   ""
+  ]
+ ]
+}

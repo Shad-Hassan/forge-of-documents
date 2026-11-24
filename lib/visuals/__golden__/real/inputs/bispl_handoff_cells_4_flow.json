@@ -1,0 +1,83 @@
+{
+ "label": "Data flow from source files through review to the portfolio site",
+ "lanes": [
+  {
+   "label": "App 2 · Research Ecosystem",
+   "nodes": [
+    {
+     "id": "files",
+     "kind": "start",
+     "title": "Source files",
+     "sub": "PDF, PPTX, datasets"
+    },
+    {
+     "id": "extract",
+     "kind": "manual",
+     "title": "Colab or agent",
+     "sub": "extract with page and slide"
+    },
+    {
+     "id": "review",
+     "kind": "decision",
+     "title": "Human review gate",
+     "sub": "approve or fix, stamp reviewer"
+    }
+   ]
+  },
+  {
+   "label": "Shared",
+   "nodes": [
+    {
+     "id": "mongo",
+     "kind": "target",
+     "title": "MongoDB",
+     "sub": "8 collections, source-tagged"
+    }
+   ]
+  },
+  {
+   "label": "App 1 · Portfolio Web",
+   "nodes": [
+    {
+     "id": "api",
+     "kind": "manual",
+     "title": "Node CRUD API",
+     "sub": "public metrics: confirmed only"
+    },
+    {
+     "id": "site",
+     "kind": "target",
+     "title": "React and GSAP site",
+     "sub": "what Sir and visitors read"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "files",
+   "extract",
+   ""
+  ],
+  [
+   "extract",
+   "review",
+   ""
+  ],
+  [
+   "review",
+   "mongo",
+   "approved"
+  ],
+  [
+   "mongo",
+   "api",
+   ""
+  ],
+  [
+   "api",
+   "site",
+   ""
+  ]
+ ]
+}

@@ -1,0 +1,86 @@
+{
+ "label": "The sidebar",
+ "lanes": [
+  {
+   "label": "Start",
+   "nodes": [
+    {
+     "id": "o1",
+     "kind": "start",
+     "title": "Overview",
+     "sub": "The next step"
+    }
+   ]
+  },
+  {
+   "label": "Tools",
+   "nodes": [
+    {
+     "id": "p_gh",
+     "kind": "manual",
+     "title": "GitHub"
+    },
+    {
+     "id": "p_ob",
+     "kind": "target",
+     "tag": "Ready",
+     "title": "Obsidian"
+    },
+    {
+     "id": "p_vc",
+     "kind": "manual",
+     "title": "Vercel"
+    },
+    {
+     "id": "p_sb",
+     "kind": "manual",
+     "title": "Supabase"
+    }
+   ]
+  },
+  {
+   "label": "More",
+   "nodes": [
+    {
+     "id": "p_lv",
+     "kind": "manual",
+     "title": "Lovable"
+    },
+    {
+     "id": "p_tk",
+     "kind": "target",
+     "tag": "Built",
+     "title": "Tasks"
+    },
+    {
+     "id": "p_th",
+     "kind": "hold",
+     "tag": "Not built",
+     "title": "Threads"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "o1",
+   "p_gh",
+   ""
+  ],
+  [
+   "o1",
+   "p_ob",
+   ""
+  ],
+  [
+   "o1",
+   "p_vc",
+   ""
+  ],
+  [
+   "o1",
+   "p_sb",
+   ""
+  ]
+ ]
+}

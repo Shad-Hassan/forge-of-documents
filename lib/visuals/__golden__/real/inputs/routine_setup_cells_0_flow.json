@@ -1,0 +1,56 @@
+{
+ "label": "Why it failed",
+ "lanes": [
+  {
+   "label": "Terminal",
+   "nodes": [
+    {
+     "id": "a1",
+     "kind": "start",
+     "title": "git push origin main",
+     "sub": "origin is plain HTTPS"
+    },
+    {
+     "id": "a2",
+     "kind": "decision",
+     "title": "Credential saved for this repo?",
+     "sub": "none was set"
+    },
+    {
+     "id": "a3",
+     "kind": "hold",
+     "title": "Prompt, then exit 128",
+     "sub": "could not read Username"
+    }
+   ]
+  },
+  {
+   "label": "Fix",
+   "nodes": [
+    {
+     "id": "a4",
+     "kind": "target",
+     "title": "Route through the local door",
+     "sub": "token stays in ops/.env"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "a1",
+   "a2",
+   ""
+  ],
+  [
+   "a2",
+   "a3",
+   "no"
+  ],
+  [
+   "a3",
+   "a4",
+   "stop retyping"
+  ]
+ ]
+}

@@ -1,0 +1,97 @@
+{
+ "label": "After publish or wrap",
+ "lanes": [
+  {
+   "label": "Publish",
+   "nodes": [
+    {
+     "id": "d1",
+     "kind": "start",
+     "title": "Page published"
+    },
+    {
+     "id": "d2",
+     "kind": "manual",
+     "title": "Warden: Sealed band",
+     "sub": "Who forged it, from what, date, version."
+    },
+    {
+     "id": "d3",
+     "kind": "decision",
+     "title": "Wrap requested?"
+    }
+   ]
+  },
+  {
+   "label": "Wrap",
+   "nodes": [
+    {
+     "id": "e1",
+     "kind": "manual",
+     "title": "/handoff quickcast",
+     "sub": "Capture only."
+    },
+    {
+     "id": "e2",
+     "kind": "manual",
+     "title": "/handoff cc",
+     "sub": "List what is open, then normal."
+    },
+    {
+     "id": "e3",
+     "kind": "manual",
+     "title": "/handoff normal",
+     "sub": "Capture, stop-notes, memory, git if enabled."
+    },
+    {
+     "id": "e4",
+     "kind": "target",
+     "title": "Type /compact or /clear",
+     "sub": "Hooks capture the session anyway."
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "d1",
+   "d2",
+   ""
+  ],
+  [
+   "d2",
+   "d3",
+   ""
+  ],
+  [
+   "d3",
+   "e1",
+   "quick"
+  ],
+  [
+   "d3",
+   "e2",
+   "cc"
+  ],
+  [
+   "d3",
+   "e3",
+   "normal"
+  ],
+  [
+   "e2",
+   "e3",
+   "then normal"
+  ],
+  [
+   "e1",
+   "e4",
+   ""
+  ],
+  [
+   "e3",
+   "e4",
+   ""
+  ]
+ ]
+}

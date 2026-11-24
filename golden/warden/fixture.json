@@ -1,0 +1,19 @@
+{
+  "subject": "Warden fixture & <check>",
+  "preheader": "Not rendered: shell() has no preheader slot",
+  "title": "Warden \"fixture\" & 'check' <ok>",
+  "blocks": [
+    {"type": "hero", "kicker": "Kicker & <tag>", "h1": "Hero \"title\" 'x'", "lede": "Lede & more <b>", "facts": [["12", "Open & shut"], [3, "Blocked <now>"]], "extra": "<span>extra html</span>"},
+    {"type": "links", "url": "https://example.com/a?b=1&c=2", "pdf_name": "fixture's.pdf"},
+    {"type": "heading", "text": "Heading & <h>", "intro": "Intro \"text\" 'here'"},
+    {"type": "heading", "text": "Bare heading"},
+    {"type": "tile", "inner": "<p>Tile inner html</p>", "top": "2px solid #2C6488", "pad": "8px 18px"},
+    {"type": "tile", "inner": "plain tile"},
+    {"type": "pill", "kind": "blocking"},
+    {"type": "pill", "kind": "ok"},
+    {"type": "text", "s": "Text & <b> \"q\" 'a'", "size": 15, "color": "#141A21", "weight": 600, "pad": "6px 0 0"},
+    {"type": "text", "s": "Default text"},
+    {"type": "raw", "text": "Raw & <quote> \"q\" 'a'", "tag": "Raw intake, Shad"},
+    {"type": "raw", "text": "Dark raw", "dark": true}
+  ]
+}

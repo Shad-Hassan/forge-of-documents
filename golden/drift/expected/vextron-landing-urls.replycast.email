@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<title>vextron-landing-urls</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap">
+<style>:root{color-scheme:light only;supported-color-schemes:light}</style>
+</head>
+<body style="margin:0;padding:0;background-color:#F1F3F4">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#F1F3F4" style="background-color:#F1F3F4">
+<tr><td align="center" style="padding:24px 16px">
+<!--[if mso]><table role="presentation" width="640" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;max-width:640px;background-color:#FFFFFF;border:1px solid #E3E6E8;border-radius:16px">
+<tr><td style="padding:32px 32px 32px 24px">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td style="padding:0 0 0 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-left:3px solid #2E4A66;padding:0 0 0 16px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Both landing pages were added after the last publish, so they aren&#x27;t live yet.</p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Routes: /contractor-program and /cool-roof-roi</p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Preview (you need to be signed in to Lovable):<br><a href="https://id-preview--744ab6e8-ec42-442c-92ab-93e23b287fd3.lovable.app/contractor-program" style="color:#2E4A66;text-decoration:underline;text-decoration-color:#AFC0D1;font-weight:500;overflow-wrap:anywhere;word-break:normal">https://id-preview--744ab6e8-ec42-442c-92ab-93e23b287fd3.lovable.app/contractor-program</a><br><a href="https://id-preview--744ab6e8-ec42-442c-92ab-93e23b287fd3.lovable.app/cool-roof-roi" style="color:#2E4A66;text-decoration:underline;text-decoration-color:#AFC0D1;font-weight:500;overflow-wrap:anywhere;word-break:normal">https://id-preview--744ab6e8-ec42-442c-92ab-93e23b287fd3.lovable.app/cool-roof-roi</a></p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Live URLs (these show &quot;page not found&quot; until we publish):<br><a href="https://vextron-roof-vision.lovable.app/contractor-program" style="color:#2E4A66;text-decoration:underline;text-decoration-color:#AFC0D1;font-weight:500;overflow-wrap:anywhere;word-break:normal">https://vextron-roof-vision.lovable.app/contractor-program</a><br><a href="https://vextron-roof-vision.lovable.app/cool-roof-roi" style="color:#2E4A66;text-decoration:underline;text-decoration-color:#AFC0D1;font-weight:500;overflow-wrap:anywhere;word-break:normal">https://vextron-roof-vision.lovable.app/cool-roof-roi</a><br><a href="https://vextrons.com/contractor-program" style="color:#2E4A66;text-decoration:underline;text-decoration-color:#AFC0D1;font-weight:500;overflow-wrap:anywhere;word-break:normal">https://vextrons.com/contractor-program</a><br><a href="https://vextrons.com/cool-roof-roi" style="color:#2E4A66;text-decoration:underline;text-decoration-color:#AFC0D1;font-weight:500;overflow-wrap:anywhere;word-break:normal">https://vextrons.com/cool-roof-roi</a></p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Once published, these same URLs work for anyone, including ad traffic.</p></td></tr>
+<tr><td style="padding:0 0 24px 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="160" align="center" bgcolor="#F7F8F9" style="background-color:#F7F8F9;border:1.5px dashed #CDD2D5;border-radius:8px;height:160px;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;color:#80888F">Paste screenshot here</td></tr></table></td></tr>
+<tr><td style="padding:0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F4F1FD" style="background-color:#F4F1FD;border:1.5px solid #5B45C2;border-radius:16px;padding:16px"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;color:#1B1F23">Also wanted to ask you: do you want me to add the route URLs to the navbar and add an additional CTA like a chat widget (permanently or temporarily for the campaign, as per your preference)?</p></td></tr></table></td></tr></table></td></tr></table></td></tr>
+</table>
+</td></tr>
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+</td></tr>
+</table>
+</body>
+</html>

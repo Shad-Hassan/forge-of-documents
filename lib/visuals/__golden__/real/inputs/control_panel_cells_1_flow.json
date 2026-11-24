@@ -1,0 +1,94 @@
+{
+ "label": "Who reads ops/.env",
+ "lanes": [
+  {
+   "label": "Source",
+   "nodes": [
+    {
+     "id": "e1",
+     "kind": "start",
+     "title": "ops/.env",
+     "sub": "Local only, never in git"
+    }
+   ]
+  },
+  {
+   "label": "Readers",
+   "nodes": [
+    {
+     "id": "r1",
+     "kind": "manual",
+     "title": "Hono server",
+     "sub": "--env-file-if-exists"
+    },
+    {
+     "id": "r2",
+     "kind": "manual",
+     "title": "npm run cli -- <tool>",
+     "sub": "Loads it, then runs the tool"
+    },
+    {
+     "id": "r3",
+     "kind": "manual",
+     "title": "Script paths",
+     "sub": "OPS_* and SCRIPT_* keys"
+    }
+   ]
+  },
+  {
+   "label": "Reaches",
+   "nodes": [
+    {
+     "id": "t1",
+     "kind": "target",
+     "title": "Browser: set or not set",
+     "sub": "Never a value"
+    },
+    {
+     "id": "t2",
+     "kind": "target",
+     "title": "supabase, vercel, gh",
+     "sub": "This project's tokens"
+    },
+    {
+     "id": "t3",
+     "kind": "target",
+     "title": "ops/scripts/*.sh, *.py",
+     "sub": "Run by path"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "e1",
+   "r1",
+   ""
+  ],
+  [
+   "e1",
+   "r2",
+   ""
+  ],
+  [
+   "e1",
+   "r3",
+   ""
+  ],
+  [
+   "r1",
+   "t1",
+   ""
+  ],
+  [
+   "r2",
+   "t2",
+   ""
+  ],
+  [
+   "r3",
+   "t3",
+   ""
+  ]
+ ]
+}

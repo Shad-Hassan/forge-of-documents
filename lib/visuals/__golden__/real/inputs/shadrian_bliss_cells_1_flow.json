@@ -1,0 +1,67 @@
+{
+ "label": "Which skill takes the email",
+ "lanes": [
+  {
+   "label": "Ask",
+   "nodes": [
+    {
+     "id": "w1",
+     "kind": "start",
+     "title": "An email is needed",
+     "sub": "Shad asks for it"
+    },
+    {
+     "id": "w2",
+     "kind": "decision",
+     "title": "Who reads it?",
+     "sub": "leadership, a client, or a reply"
+    }
+   ]
+  },
+  {
+   "label": "Route",
+   "nodes": [
+    {
+     "id": "w3",
+     "kind": "target",
+     "title": "/shadrian-bliss",
+     "sub": "leadership-facing status email"
+    },
+    {
+     "id": "w4",
+     "kind": "manual",
+     "title": "/reddington",
+     "sub": "anything a client reads"
+    },
+    {
+     "id": "w5",
+     "kind": "manual",
+     "title": "/replyCast",
+     "sub": "email replies"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "w1",
+   "w2",
+   ""
+  ],
+  [
+   "w2",
+   "w3",
+   "leadership"
+  ],
+  [
+   "w2",
+   "w4",
+   "client"
+  ],
+  [
+   "w2",
+   "w5",
+   "reply"
+  ]
+ ]
+}

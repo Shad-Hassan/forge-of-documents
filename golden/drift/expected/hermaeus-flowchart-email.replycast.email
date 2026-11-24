@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<title>hermaeus-flowchart-email</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap">
+<style>:root{color-scheme:light only;supported-color-schemes:light}</style>
+</head>
+<body style="margin:0;padding:0;background-color:#F1F3F4">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#F1F3F4" style="background-color:#F1F3F4">
+<tr><td align="center" style="padding:24px 16px">
+<!--[if mso]><table role="presentation" width="640" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;max-width:640px;background-color:#FFFFFF;border:1px solid #E3E6E8;border-radius:16px">
+<tr><td style="padding:32px 32px 32px 24px">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td style="padding:0 0 0 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-left:3px solid #2E4A66;padding:0 0 0 16px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">The Hermaeus Mora Engine is nine fixed steps. Email → calendar → tasks → master sheet → analysis → compose → send gate → log → JSON output.</p></td></tr>
+<tr><td style="padding:8px 0 8px 0"><h2 style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:24px;font-weight:600;color:#1B1F23">The workflow</h2></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Steps 1–4 check what&#x27;s coming: unreplied threads (Gmail), events in the next 3 days (Calendar), overdue tasks (Tasks), and the master sheet (Sheets). All metadata, no message bodies.</p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Step 5 reads it all together. Step 6 writes reminders. Step 7 is the gate: send only after a human yes. Steps 8 and 9 log the run and return JSON for the dashboard.</p></td></tr>
+<tr><td style="padding:8px 0 8px 0"><h2 style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:24px;font-weight:600;color:#1B1F23">The send gate</h2></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Step 7 is a decision: if approved, the reminder goes out and we log it (step 8). If not approved, no email leaves. A PreToolUse hook allows only @synergybanc.com recipients and waits for approval.</p></td></tr>
+<tr><td style="padding:8px 0 8px 0"><h2 style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:24px;font-weight:600;color:#1B1F23">Why nine steps</h2></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Each step is a test. Each test gates the next stage. Nine steps mean nine tests, and every run can be repeated and measured.</p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">No human yes = no email sent. No cron trigger. Run on demand.</p></td></tr>
+<tr><td style="padding:8px 0 0 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-top:1px solid #E3E6E8;padding-top:16px"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:24px;color:#4F575E">Shad</p><p style="margin:8px 0 0 0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:24px;font-weight:600;color:#1B1F23"></p></td></tr></table></td></tr></table></td></tr></table></td></tr>
+</table>
+</td></tr>
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+</td></tr>
+</table>
+</body>
+</html>

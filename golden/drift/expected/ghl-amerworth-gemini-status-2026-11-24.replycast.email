@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<title>ghl-amerworth-gemini-status-2026-11-24</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap">
+<style>:root{color-scheme:light only;supported-color-schemes:light}</style>
+</head>
+<body style="margin:0;padding:0;background-color:#F1F3F4">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#F1F3F4" style="background-color:#F1F3F4">
+<tr><td align="center" style="padding:24px 16px">
+<!--[if mso]><table role="presentation" width="640" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;max-width:640px;background-color:#FFFFFF;border:1px solid #E3E6E8;border-radius:16px">
+<tr><td style="padding:32px 32px 32px 24px">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23">Hello bhai,</p></td></tr>
+<tr><td style="padding:0 0 0 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-left:3px solid #2E4A66;padding:0 0 0 16px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Purpose</p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Three tasks. Two need your input: the GHL sandbox test and the Amerworth base 1 visual. The third is for information only.</p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">GHL API</p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Purpose: test our GHL integrations in a sandbox so there is no risk to live client data or settings.</p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Status: awaiting your confirmation. I can share logs of everything I have done so far.</p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Query: approval to use the trial sub-account for testing only.</p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Amerworth Base</p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Purpose: build one simple visual of the &quot;base 1&quot; setup from my notes of the earlier meeting, so you, Nasir and I have something concrete to QA.</p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Scope: one visual only, so the weekly workspace stays uncluttered.</p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Status: awaiting protocols. I am requesting to start on base 1 now so there is enough time to fine-tune it and avoid any communication lapse.</p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Query: can I build it on a test subdomain or an external host such as Vercel, or should I wait? No client data goes on external hosting without your approval.</p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Gemini AI agents with G Suite setup (due 11/26/2026)</p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">TLDR of Nasir&#x27;s email: Nasir shared a setup guide for Gemini on Google Workspace Business Plus for the US and Bangladesh teams. He recommends ClickUp&#x27;s Free Forever plan for all 20 members. It includes unlimited tasks and members, board, list, calendar and table views, and Google Calendar sync, with files kept in Google Drive.</p></td></tr>
+<tr><td style="padding:0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Status: added to my calendar and perusing the documents. No queries regarding it for the moment.</p></td></tr></table></td></tr></table></td></tr>
+</table>
+</td></tr>
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+</td></tr>
+</table>
+</body>
+</html>

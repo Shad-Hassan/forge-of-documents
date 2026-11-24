@@ -1,0 +1,67 @@
+{
+ "label": "Does this line go in the email?",
+ "lanes": [
+  {
+   "label": "Each line",
+   "nodes": [
+    {
+     "id": "f1",
+     "kind": "start",
+     "title": "A candidate line",
+     "sub": "from Shad's message or the record"
+    },
+    {
+     "id": "f2",
+     "kind": "decision",
+     "title": "Can leadership act on it?",
+     "sub": "or does Shad need it said"
+    }
+   ]
+  },
+  {
+   "label": "Verdict",
+   "nodes": [
+    {
+     "id": "f3",
+     "kind": "target",
+     "title": "Goes in, stated plainly",
+     "sub": "including what is not done yet"
+    },
+    {
+     "id": "f4",
+     "kind": "hold",
+     "title": "Goes in, his words only",
+     "sub": "a reason Shad green-lit, kept brief"
+    },
+    {
+     "id": "f5",
+     "kind": "manual",
+     "title": "Stays out",
+     "sub": "effort, stress, mix-ups, private context"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "f1",
+   "f2",
+   ""
+  ],
+  [
+   "f2",
+   "f3",
+   "yes"
+  ],
+  [
+   "f2",
+   "f4",
+   "green-lit"
+  ],
+  [
+   "f2",
+   "f5",
+   "no"
+  ]
+ ]
+}

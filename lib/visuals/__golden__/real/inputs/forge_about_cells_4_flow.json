@@ -1,0 +1,107 @@
+{
+ "label": "From click to record",
+ "lanes": [
+  {
+   "label": "You ask",
+   "nodes": [
+    {
+     "id": "y1",
+     "kind": "start",
+     "title": "You pick an action"
+    },
+    {
+     "id": "y2",
+     "kind": "manual",
+     "title": "Fixed in advance",
+     "sub": "No free-form commands"
+    },
+    {
+     "id": "y3",
+     "kind": "decision",
+     "title": "Look or change?"
+    }
+   ]
+  },
+  {
+   "label": "Gate",
+   "nodes": [
+    {
+     "id": "g1",
+     "kind": "manual",
+     "tag": "Look",
+     "title": "Runs on a click"
+    },
+    {
+     "id": "g2",
+     "kind": "hold",
+     "tag": "Change · planned",
+     "title": "Waits for your yes"
+    }
+   ]
+  },
+  {
+   "label": "Record",
+   "nodes": [
+    {
+     "id": "r1",
+     "kind": "hold",
+     "tag": "Planned",
+     "title": "Written down"
+    }
+   ]
+  },
+  {
+   "label": "Keys",
+   "nodes": [
+    {
+     "id": "p1",
+     "kind": "start",
+     "title": "Private folder",
+     "sub": "Never uploaded"
+    },
+    {
+     "id": "p2",
+     "kind": "target",
+     "title": "Screen shows filled or empty"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "y1",
+   "y2",
+   ""
+  ],
+  [
+   "y2",
+   "y3",
+   ""
+  ],
+  [
+   "y3",
+   "g1",
+   "look"
+  ],
+  [
+   "y3",
+   "g2",
+   "change"
+  ],
+  [
+   "g1",
+   "r1",
+   ""
+  ],
+  [
+   "g2",
+   "r1",
+   "yes"
+  ],
+  [
+   "p1",
+   "p2",
+   ""
+  ]
+ ]
+}

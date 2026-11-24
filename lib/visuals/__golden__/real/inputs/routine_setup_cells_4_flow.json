@@ -1,0 +1,78 @@
+{
+ "label": "Gate",
+ "lanes": [
+  {
+   "label": "Method",
+   "nodes": [
+    {
+     "id": "e1",
+     "kind": "start",
+     "title": "Any git action",
+     "sub": "clone, push or config"
+    },
+    {
+     "id": "e2",
+     "kind": "decision",
+     "title": "Uses gh, SSH, git config or a credential file?",
+     "sub": "one of these"
+    },
+    {
+     "id": "e3",
+     "kind": "hold",
+     "title": "Stop",
+     "sub": "use the local door"
+    }
+   ]
+  },
+  {
+   "label": "Permission",
+   "nodes": [
+    {
+     "id": "e4",
+     "kind": "decision",
+     "title": "Shad asked to push in this message?",
+     "sub": "pushes only"
+    },
+    {
+     "id": "e5",
+     "kind": "hold",
+     "title": "Stop and ask",
+     "sub": "no push"
+    },
+    {
+     "id": "e6",
+     "kind": "target",
+     "title": "Run the dry-run, then push",
+     "sub": "push-repo"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "e1",
+   "e2",
+   ""
+  ],
+  [
+   "e2",
+   "e3",
+   "yes"
+  ],
+  [
+   "e2",
+   "e4",
+   "no"
+  ],
+  [
+   "e4",
+   "e5",
+   "no"
+  ],
+  [
+   "e4",
+   "e6",
+   "yes"
+  ]
+ ]
+}

@@ -1,0 +1,209 @@
+{
+  "title": "Fixture & <test> \"quoted\" 'single' page",
+  "blocks": [
+    {
+      "type": "header",
+      "eyebrow": "Fixture & <eyebrow> \"x\" 'y'",
+      "title": "Every block <type> & \"quotes\" 'apostrophes'",
+      "lede": "Lede with & ampersand, < less than, > greater than, \"double\" and 'single' quotes."
+    },
+    {
+      "type": "stats",
+      "items": [
+        {
+          "value": "1,284",
+          "label": "Sessions & <active>",
+          "note": "note with **bold** & `code <x>`"
+        },
+        {
+          "value": "98.4%",
+          "label": "Uptime \"30 day\""
+        },
+        {
+          "value": "7",
+          "label": "Open 'risks'"
+        },
+        {
+          "value": "$4,112",
+          "label": "Cost <MTD>"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Section & <heading> \"h2\""
+    },
+    {
+      "type": "tile",
+      "title": "Span 2 tile with list & <tags>",
+      "body": [
+        "First paragraph, with & < > \" ' all escaped.",
+        "Second paragraph: a <b>bold</b> attempt stays literal text."
+      ],
+      "list": [
+        "Item & one",
+        "Item <two>",
+        "Item \"three\""
+      ],
+      "span": "2"
+    },
+    {
+      "type": "tile",
+      "title": "Span 1 tile",
+      "body": [
+        "One third of the row."
+      ],
+      "span": "1"
+    },
+    {
+      "type": "tile",
+      "title": "Span 3 tile (default full row)",
+      "body": [
+        "Full row, no span set."
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        "Script & <cmd>",
+        "Purpose \"quoted\"",
+        "Runs"
+      ],
+      "rows": [
+        [
+          "build.py --check & exit",
+          "Gate: 'PASS' or FAIL",
+          "3"
+        ],
+        [
+          "grep <pattern>",
+          "Find \"x\" & y",
+          "8"
+        ]
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "text": "Payments & gateway",
+          "status": "risk"
+        },
+        {
+          "text": "Ledger <sync>",
+          "status": "warn"
+        },
+        {
+          "text": "Auth \"service\"",
+          "status": "ok"
+        },
+        {
+          "text": "Plain row, no status"
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "info",
+      "text": "Info callout with & < > \" '."
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "text": "Warn callout: needs attention & review."
+    },
+    {
+      "type": "callout",
+      "tone": "ok",
+      "text": "OK callout: 'healthy' <now>."
+    },
+    {
+      "type": "seal",
+      "who": "Claude & <Shad>",
+      "source": "Fixture \"source\" 'file'",
+      "date": "2026-11-24",
+      "version": "1"
+    },
+    {
+      "type": "tile",
+      "title": "Injection test",
+      "span": "3",
+      "body": [
+        "**<script>x</script>**"
+      ]
+    },
+    {
+      "type": "flow",
+      "title": "Flow & <diagram>",
+      "lanes": [
+        {
+          "label": "Lane <one>",
+          "nodes": [
+            {
+              "id": "a",
+              "kind": "start",
+              "title": "Start & <go>",
+              "sub": "sub \"q\"",
+              "tag": "T&1"
+            },
+            {
+              "id": "b",
+              "kind": "manual",
+              "title": "Manual 'step'"
+            }
+          ]
+        },
+        {
+          "label": "Lane two",
+          "nodes": [
+            {
+              "id": "c",
+              "kind": "hold",
+              "title": "On hold",
+              "sub": "waiting"
+            },
+            {
+              "id": "d",
+              "kind": "decision",
+              "title": "Decide?"
+            },
+            {
+              "id": "e",
+              "kind": "target",
+              "title": "Target ok"
+            }
+          ]
+        }
+      ],
+      "edges": [
+        {
+          "from": "a",
+          "to": "b",
+          "label": ""
+        },
+        {
+          "from": "b",
+          "to": "c",
+          "label": "yes & <no>"
+        },
+        {
+          "from": "c",
+          "to": "d",
+          "label": ""
+        },
+        {
+          "from": "d",
+          "to": "e",
+          "label": "go"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "span": "2",
+      "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=",
+      "alt": "Tiny \"png\" & <alt>",
+      "caption": "Caption **bold** & `code`"
+    }
+  ]
+}

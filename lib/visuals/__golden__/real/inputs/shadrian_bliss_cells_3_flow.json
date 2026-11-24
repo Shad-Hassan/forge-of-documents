@@ -1,0 +1,78 @@
+{
+ "label": "The Waiting on loop",
+ "lanes": [
+  {
+   "label": "Per item",
+   "nodes": [
+    {
+     "id": "q1",
+     "kind": "start",
+     "title": "Next item",
+     "sub": "token, sign-in, keys, template"
+    },
+    {
+     "id": "q2",
+     "kind": "manual",
+     "title": "Ask three short questions",
+     "sub": "in hand? where? who acts?"
+    },
+    {
+     "id": "q3",
+     "kind": "decision",
+     "title": "What does Shad say?",
+     "sub": "his answer decides the line"
+    }
+   ]
+  },
+  {
+   "label": "Outcome",
+   "nodes": [
+    {
+     "id": "q4",
+     "kind": "target",
+     "title": "In hand: leaves Waiting on",
+     "sub": "Done only in his wording"
+    },
+    {
+     "id": "q5",
+     "kind": "hold",
+     "title": "Still articulating: stays",
+     "sub": "no guess fills the gap"
+    },
+    {
+     "id": "q6",
+     "kind": "manual",
+     "title": "Resolved or a mix-up: leaves",
+     "sub": "not mentioned in the email"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "q1",
+   "q2",
+   ""
+  ],
+  [
+   "q2",
+   "q3",
+   ""
+  ],
+  [
+   "q3",
+   "q4",
+   "in hand"
+  ],
+  [
+   "q3",
+   "q5",
+   "articulating"
+  ],
+  [
+   "q3",
+   "q6",
+   "resolved"
+  ]
+ ]
+}

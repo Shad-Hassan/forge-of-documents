@@ -1,0 +1,70 @@
+{
+ "label": "Two vaults, two jobs",
+ "lanes": [
+  {
+   "label": "Brain",
+   "nodes": [
+    {
+     "id": "n1",
+     "kind": "start",
+     "tag": "Notes",
+     "title": "Obsidian vault",
+     "sub": "Everything I know"
+    },
+    {
+     "id": "n2",
+     "kind": "manual",
+     "title": "Snapshot of the notes"
+    },
+    {
+     "id": "n3",
+     "kind": "target",
+     "title": "Shown on the Obsidian page"
+    }
+   ]
+  },
+  {
+   "label": "Skeleton",
+   "nodes": [
+    {
+     "id": "k1",
+     "kind": "start",
+     "tag": "Code",
+     "title": "One folder of projects"
+    },
+    {
+     "id": "k2",
+     "kind": "manual",
+     "title": "ForgeOfCreation lives here"
+    },
+    {
+     "id": "k3",
+     "kind": "target",
+     "title": "Built out, one page at a time"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "n1",
+   "n2",
+   ""
+  ],
+  [
+   "n2",
+   "n3",
+   ""
+  ],
+  [
+   "k1",
+   "k2",
+   ""
+  ],
+  [
+   "k2",
+   "k3",
+   ""
+  ]
+ ]
+}

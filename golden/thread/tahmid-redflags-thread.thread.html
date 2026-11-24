@@ -1,0 +1,152 @@
+<title>Tahmid Red Flags</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="color-scheme" content="light only">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@700&family=IBM+Plex+Serif:ital,wght@1,400&display=swap">
+<style>
+body{background:#FFFFFF;color:#1B1F23;font-family:'Geist',Helvetica,Arial,sans-serif}
+.wrap{max-width:1000px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.subj{margin:0 0 18px 52px;font-size:22px;line-height:1.3;font-weight:600;letter-spacing:-.01em;text-wrap:balance}
+.msg{padding-block:18px 26px;border-top:1px solid #E3E6E8}
+.msg:first-of-type{border-top:0;padding-top:4px}
+.mh{display:grid;grid-template-columns:40px minmax(0,1fr) auto;column-gap:12px;align-items:start}
+.av{width:40px;height:40px;border-radius:50%;background:#2E4A66;color:#FFFFFF;display:grid;place-items:center;font-size:17px;font-weight:600;line-height:1}
+.who{margin:0;font-size:14px;line-height:20px;overflow-wrap:anywhere}
+.who b{font-weight:600}
+.addr,.to,.when{font-size:12.5px;color:#4F575E}
+.to{margin:2px 0 0;line-height:18px}
+.when{margin:0;line-height:20px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.mb{margin:14px 0 0 52px}
+.shot{background:#F1F3F4;padding:24px 12px}
+.shot img{display:block;width:100%;max-width:640px;height:auto;margin:0 auto;border:1px solid #E3E6E8;border-radius:12px}
+.bento{background:#F1F3F4;padding:22px}
+.bx{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+.s2{grid-column:span 2}.s4{grid-column:span 4}.s6{grid-column:1/-1}
+.bx-h{grid-column:1/-1;margin:2px 2px 6px;font-size:clamp(26px,3.4vw,38px);line-height:1.08;font-weight:700;letter-spacing:-.025em;text-wrap:balance;color:#161B20}
+.bx-h3{grid-column:1/-1;margin:6px 2px -2px;font-size:22px;line-height:1.2;font-weight:700;letter-spacing:-.015em;color:#161B20}
+.lead{grid-column:1/-1;margin:10px 2px 0;font-size:17px;line-height:1.55;color:#4A535B;max-width:62ch}
+.t{position:relative;overflow:hidden;min-width:0;border-radius:22px;padding:24px;border:1px solid #DCE1E6;background:linear-gradient(165deg,#FFFFFF 0%,#F5F7F9 55%,#E9EDF1 100%);box-shadow:inset 0 1px 0 #FFFFFF,0 1px 2px rgba(22,27,32,.06),0 10px 28px rgba(22,27,32,.07)}
+.t::before{content:"";position:absolute;left:0;right:0;top:0;height:55%;background:linear-gradient(180deg,rgba(255,255,255,.75),rgba(255,255,255,0));pointer-events:none}
+.t>*{position:relative}
+.hero{padding:32px 34px 30px;border-color:#22303D;color:#E9EDF0;background:linear-gradient(155deg,#22303D 0%,#121820 55%,#0A0B0D 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 14px 34px rgba(10,11,13,.22)}
+.hero::before{background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,0))}
+.qm{display:block;height:44px;font-family:'IBM Plex Serif',Georgia,serif;font-size:96px;line-height:.9;color:#5E7A96}
+.yarn{margin:0;max-width:48ch;font-family:'IBM Plex Serif',Georgia,serif;font-style:italic;font-size:clamp(19px,2.1vw,24px);line-height:1.45;color:#E9EDF0}
+.punch{margin:16px 0 0;max-width:44ch;font-size:clamp(17px,1.8vw,20px);line-height:1.4;font-weight:600;color:#9DB4CC}
+.tagcard{transform:rotate(-1.2deg)}
+.tagcard::after{content:"";position:absolute;top:16px;right:16px;width:14px;height:14px;border-radius:50%;border:2px solid #C3C9CF;background:#F1F3F4}
+.spec{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 12px;margin:0}
+.spec dt{padding-top:2px;font-size:12.5px;line-height:1.4;color:#7C868E}
+.spec dd{margin:0;font-size:14.5px;line-height:1.4;font-weight:600;color:#161B20;overflow-wrap:anywhere}
+.n{margin:0;font-family:'IBM Plex Sans Condensed','IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:clamp(52px,6vw,76px);line-height:.9;font-weight:700;letter-spacing:-.03em;font-variant-numeric:tabular-nums;color:#2E4A66;background:linear-gradient(180deg,#46698C 0%,#1F3348 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.l{margin:10px 0 0;font-size:14.5px;line-height:1.45;color:#4A535B}
+.t>.ex{position:absolute;top:12px;right:18px;font-family:'IBM Plex Sans Condensed','IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:44px;line-height:1;font-weight:700;color:#D3D8DD}
+.pill{display:inline-block;max-width:calc(100% - 38px);padding:3px 13px;border-radius:999px;font-size:13px;font-weight:500;line-height:1.5;letter-spacing:.01em;color:#2E4A66;border:1px solid rgba(46,74,102,.35);background:linear-gradient(135deg,rgba(46,74,102,.12),rgba(46,74,102,.04))}
+.q{margin:14px 0 0;font-size:18px;line-height:1.35;font-weight:600;letter-spacing:-.01em;color:#161B20}
+.k{margin:10px 0 0;font-size:15px;line-height:1.55;color:#4A535B}
+.hand h4{margin:0;font-size:20px;line-height:1.25;font-weight:700;letter-spacing:-.015em;color:#161B20}
+.hand p{margin:10px 0 0;font-size:17px;line-height:1.55;color:#161B20;max-width:58ch}
+.verdict{display:flex;flex-direction:column;justify-content:center;gap:14px;border-color:#8A3F31;color:#FFFFFF;background:linear-gradient(155deg,#C0695A 0%,#9A4A3A 45%,#6B2B20 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 14px 34px rgba(107,43,32,.25)}
+.verdict::before{background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,0))}
+.bang{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:#FFFFFF;color:#9A4A3A;font:700 18px/1 Arial,Helvetica,sans-serif}
+.verdict p{margin:0;font-size:17px;line-height:1.5;font-weight:600}
+@media (max-width:760px){
+  .bx{grid-template-columns:minmax(0,1fr)}
+  .s2,.s4,.s6{grid-column:1/-1}
+  .bento{padding:16px}
+  .hero{padding:26px 22px}
+}
+@media (max-width:600px){
+  .subj{margin-left:0}
+  .mh{grid-template-columns:40px minmax(0,1fr)}
+  .when{grid-column:2;white-space:normal}
+  .mb{margin-left:calc(-1*max(16px,env(safe-area-inset-left,0px)));margin-right:calc(-1*max(16px,env(safe-area-inset-right,0px)))}
+}
+</style>
+<main class="wrap">
+
+<article class="msg">
+<header class="mh">
+<div class="av" aria-hidden="true">S</div>
+<div>
+<p class="who"><b>Shad Hassan</b> <span class="addr">Commentary</span></p>
+
+</div>
+<p class="when"><time datetime="2026-10-17T18:19">Oct 17, 2026, 6:19 PM</time></p>
+</header>
+<div class="mb bento" style="">
+<div class="bx">
+<h2 class="bx-h">HumanDB Catalogue - Specimen: The Manchild Client</h2>
+<div class="t s4 hero"><span class="qm" aria-hidden="true">&ldquo;</span><p class="yarn">I once knew a man in Lisbon who tried to buy a yacht by describing the sea. No length, no budget, no harbour. Just how blue it should be, and a promise to pay once it floated. The broker sold him a postcard.</p><p class="punch">Tahmid would have asked for a rate on the postcard without the stamp. Maybe next iteration.</p></div>
+<div class="t s2 tagcard"><dl class="spec"><dt>Specimen</dt><dd>Tahmid</dd><dt>Classification</dt><dd>manchild, client variant</dd><dt>First sighted</dt><dd>27/09, asking for &quot;a dynamic website for me with the globe moving effect&quot;</dd><dt>Last sighted</dt><dd>16/10, &quot;Don&#x27;t need it&quot;</dd><dt>Status</dt><dd>disqualified as a client, Oct 3</dd></dl></div>
+<div class="t s2"><p class="n">19</p><p class="l">days on file, one landing page</p></div><div class="t s2"><p class="n">0</p><p class="l">written scopes received</p></div><div class="t s2"><p class="n">3</p><p class="l">rewrites of &quot;phase 1&quot; in 6 days</p></div>
+<p class="lead">Nineteen days, one landing page, and not one written sentence that could pass for a scope. What he sent instead is preserved below, in his own words, for science.</p>
+<h3 class="bx-h3">Field notes</h3>
+<div class="t s2"><span class="ex" aria-hidden="true">A</span><span class="pill">29/09 · his email, 12:40 pm</span><p class="q">&quot;there will be many versions of it&quot;, payment &quot;only if the landing page and the globe works&quot;</p><p class="k">Payment on the condition that it &quot;works&quot;, judged by the only man who can&#x27;t tell you what &quot;works&quot; means. That isn&#x27;t a contract. It&#x27;s a hostage situation where the hostage is expected to bring his own rope.</p></div><div class="t s2"><span class="ex" aria-hidden="true">B</span><span class="pill">29/09 · WhatsApp 1:43 pm</span><p class="q">&quot;You should let me know how much you want&quot;</p><p class="k">The bill before the menu. A price for a scope he never wrote, demanded while the requirements form sat unanswered in his inbox. In my experience, a man who wants the price before he knows what he&#x27;s buying has already decided not to pay it.</p></div><div class="t s2"><span class="ex" aria-hidden="true">C</span><span class="pill">01/10 · WhatsApp 2:08–2:10 pm</span><p class="q">&quot;I have been busy&quot;</p><p class="k">He promised a reference video on 29/09. The video, like the scope, is still in transit. &quot;I have been busy&quot; is what a man says when he means &quot;I assumed you would wait.&quot; Two minutes later he tried to lower the price by deleting a feature: &quot;Maybe we do this next iteration.&quot;</p></div><div class="t s2"><span class="ex" aria-hidden="true">D</span><span class="pill">03/10 · WhatsApp 3:20 am</span><p class="q">&quot;You should have been able to give a rate with or without video for phase 1&quot;</p><p class="k">Three in the morning, and he&#x27;s handing out performance reviews to a man he never hired. By then &quot;phase 1&quot; had changed three times in six days. You can&#x27;t price a house while the owner keeps moving the ground floor.</p></div><div class="t s2"><span class="ex" aria-hidden="true">E</span><span class="pill">03/10 · WhatsApp 8:23 pm</span><p class="q">&quot;If you don&#x27;t know your rate, you are not a contractor&quot;</p><p class="k">The rate exists. It&#x27;s attached to a scope, the way a price is attached to an object. He kept holding up an empty hanger, asking what the shirt costs, then told me I wasn&#x27;t a tailor for not knowing.</p></div><div class="t s2"><span class="ex" aria-hidden="true">F</span><span class="pill">16/10 · WhatsApp 7:38 pm</span><p class="q">&quot;Don&#x27;t need it&quot;</p><p class="k">Declining a table at a restaurant that threw him out thirteen days earlier. He was disqualified as a client on Oct 3. You can&#x27;t turn down an offer that was never on the table.</p></div>
+<div class="t s4 hand"><h4>Handling instructions</h4><p>Do not quote him. Do not scope for him. Do not mistake persistence for a budget. He wants a contractor&#x27;s price on an employee&#x27;s terms, and he&#x27;ll call every new demand a phase. Observe from behind the glass, take notes, and keep your calendar out of his reach.</p></div>
+<div class="t s2 verdict"><span class="bang" aria-hidden="true">!</span><p>Disqualified as a client on Oct 3. Catalogued in the humanDB as a fine research specimen. I&#x27;m not chasing this deal.</p></div>
+</div>
+</div>
+</article>
+<article class="msg">
+<header class="mh">
+<div class="av" aria-hidden="true">S</div>
+<div>
+<p class="who"><b>Shad Hassan</b> <span class="addr">&lt;shadhassan8991@gmail.com&gt;</span></p>
+<p class="to">to Tahmid</p>
+</div>
+<p class="when"><time datetime="2026-10-02T12:58">Oct 2, 2026, 12:58 PM</time></p>
+</header>
+<div class="mb" style="background-color:#F1F3F4">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#F1F3F4" style="background-color:#F1F3F4">
+<tr><td align="center" style="padding:28px 12px">
+<!--[if mso]><table role="presentation" width="640" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;max-width:640px;background-color:#FFFFFF;border-radius:16px">
+<tr><td style="padding:32px 32px 28px 32px">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td style="padding:0 0 20px 0"><p style="margin:0;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#161B20">Good afternoon Tahmid Bhai,</p></td></tr>
+<tr><td style="padding:0 0 20px 0"><p style="margin:0;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#161B20">You said &quot;there will be many versions of it&quot;, and payment &quot;only if the landing page and the globe works&quot;. That&#x27;s the problem.</p></td></tr>
+<tr><td style="padding:0 0 20px 0"><p style="margin:0;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#161B20">An employee is paid for their time, however many versions it takes. A contractor is paid for a fixed scope, timeline and price, agreed up front. You&#x27;re asking for many versions on a contractor&#x27;s payment terms, which isn&#x27;t how professional work is commissioned. A mockup, features added message by message and a video that still hasn&#x27;t come are context sent in pieces, not a scope. And &quot;works&quot; isn&#x27;t an acceptance criterion.</p></td></tr>
+<tr><td style="padding:0 0 20px 0"><p style="margin:0;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#161B20">This is a side project for me, so I need to know exactly how long you&#x27;ll be in my calendar. Send me the full scope and a calculated timeline for the entire project, including every version, in writing. Not an assumed &quot;two weeks&quot;; you&#x27;re technical enough to work it out. If writing it up is more than you want to take on, a project planner can do it for you.</p></td></tr>
+<tr><td style="padding:0 0 20px 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F3E3DE" style="background-color:#F3E3DE;border-left:3px solid #9A4A3A;border-radius:0 10px 10px 0;padding:14px 18px"><p style="margin:0;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#161B20;color:#161B20">With that, I&#x27;ll tell you whether I can fit it in and what it costs. Without it, I&#x27;ll pass on this one.</p></td></tr></table></td></tr>
+<tr><td style="padding:8px 0 0 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-top:1px solid #DFE3E5;padding-top:20px"><p style="margin:0;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.5;color:#4A535B"></p><p style="margin:4px 0 0 0;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:17px;line-height:1.4;font-weight:600;color:#161B20">Shad</p></td></tr></table></td></tr>
+</table>
+</td></tr>
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+</td></tr>
+</table>
+</div>
+</article>
+<article class="msg">
+<header class="mh">
+<div class="av" aria-hidden="true">S</div>
+<div>
+<p class="who"><b>Shad Hassan</b> <span class="addr">&lt;shadhassan8991@gmail.com&gt;</span></p>
+<p class="to">to Tahmid</p>
+</div>
+<p class="when"><time datetime="2026-10-03T13:27">Oct 3, 2026, 1:27 PM</time></p>
+</header>
+<div class="mb" style="background-color:#F1F3F4">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#F1F3F4" style="background-color:#F1F3F4">
+<tr><td align="center" style="padding:28px 12px">
+<!--[if mso]><table role="presentation" width="640" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;max-width:640px;background-color:#FFFFFF;border-radius:16px">
+<tr><td style="padding:32px 32px 28px 32px">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td style="padding:8px 0 10px 0"><h2 style="margin:0;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:21px;line-height:1.25;font-weight:600;letter-spacing:-0.01em;color:#161B20">Disqualified Due To Scope Creeping - Verbatim Logs</h2></td></tr>
+<tr><td style="padding:0 0 20px 0"><p style="margin:0;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#161B20">Your &quot;phase 1&quot; changed three times in six days, as logged below. A written document comes first, at any size, even for UI/UX alone. I&#x27;m not chasing this deal, and I&#x27;m done with this conversation.</p></td></tr>
+<tr><td style="padding:8px 0 16px 0"><h1 style="margin:0;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:28px;line-height:1.15;font-weight:600;letter-spacing:-0.02em;color:#161B20">The fault in your scope creeping</h1></td></tr>
+<tr><td style="padding:0 0 20px 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F7F8F9" style="background-color:#F7F8F9;border-left:3px solid #CDD2D5;border-radius:0 10px 10px 0;padding:14px 18px"><p style="margin:0 0 4px 0;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:13px;line-height:1.5;font-weight:600;color:#4A535B">0 · 27/09</p><p style="margin:0;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:#161B20">Original ask: &quot;dynamic website… with the globe moving effect&quot;, plus his mockup</p><p style="margin:10px 0 0 0"><span style="display:inline-block;padding:3px 8px;border:1px solid #9A4A3A;border-radius:6px;background-color:#F3E3DE;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:12px;line-height:1.5;font-weight:600;color:#9A4A3A">Source: WhatsApp 5:17 pm, email 9:07 pm</span></p></td></tr><tr><td height="10" style="height:10px;line-height:10px;font-size:0">&nbsp;</td></tr><tr><td bgcolor="#F6EDD6" style="background-color:#F6EDD6;border-left:3px solid #8A6414;border-radius:0 10px 10px 0;padding:14px 18px"><p style="margin:0 0 4px 0;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:13px;line-height:1.5;font-weight:600;color:#8A6414">1 · 29/09</p><p style="margin:0;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:#161B20">New mockup v2, region pins (.ca/.us, .in/.bd), falling-from-space effect, a promised video, &quot;many phase project&quot;</p><p style="margin:10px 0 0 0"><span style="display:inline-block;padding:3px 8px;border:1px solid #9A4A3A;border-radius:6px;background-color:#F3E3DE;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:12px;line-height:1.5;font-weight:600;color:#9A4A3A">Source: His email, 12:40 pm</span></p></td></tr><tr><td height="10" style="height:10px;line-height:10px;font-size:0">&nbsp;</td></tr><tr><td bgcolor="#F6EDD6" style="background-color:#F6EDD6;border-left:3px solid #8A6414;border-radius:0 10px 10px 0;padding:14px 18px"><p style="margin:0 0 4px 0;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:13px;line-height:1.5;font-weight:600;color:#8A6414">2 · 01/10</p><p style="margin:0;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:#161B20">&quot;How much is rate for version 1&quot; → &quot;rate without falling from sky tag effect&quot; → &quot;Maybe we do this next iteration&quot;</p><p style="margin:10px 0 0 0"><span style="display:inline-block;padding:3px 8px;border:1px solid #9A4A3A;border-radius:6px;background-color:#F3E3DE;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:12px;line-height:1.5;font-weight:600;color:#9A4A3A">Source: WhatsApp 2:08–2:10 pm</span></p></td></tr><tr><td height="10" style="height:10px;line-height:10px;font-size:0">&nbsp;</td></tr><tr><td bgcolor="#F6EDD6" style="background-color:#F6EDD6;border-left:3px solid #8A6414;border-radius:0 10px 10px 0;padding:14px 18px"><p style="margin:0 0 4px 0;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:13px;line-height:1.5;font-weight:600;color:#8A6414">3 · 03/10</p><p style="margin:0;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:#161B20">Renamed to &quot;phase 1&quot;, and the promised video becomes optional: &quot;with or without video&quot;</p><p style="margin:10px 0 0 0"><span style="display:inline-block;padding:3px 8px;border:1px solid #9A4A3A;border-radius:6px;background-color:#F3E3DE;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:12px;line-height:1.5;font-weight:600;color:#9A4A3A">Source: WhatsApp 3:20 am</span></p></td></tr></table></td></tr>
+<tr><td style="padding:8px 0 16px 0"><h1 style="margin:0;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:28px;line-height:1.15;font-weight:600;letter-spacing:-0.02em;color:#161B20">Remedial Course Recommended</h1></td></tr>
+<tr><td style="padding:0 0 20px 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#F3E3DE" style="background-color:#F3E3DE;border-left:3px solid #9A4A3A;border-radius:0 10px 10px 0;padding:14px 18px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td valign="top" width="22" style="width:22px;padding:2px 12px 0 0"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="22" height="22" align="center" valign="middle" bgcolor="#9A4A3A" style="width:22px;height:22px;background-color:#9A4A3A;border-radius:11px;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;line-height:22px;color:#FFFFFF;mso-line-height-rule:exactly">!</td></tr></table></td><td valign="top"><p style="margin:0;font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.65;color:#161B20;color:#161B20">Project Management Foundations: Requirements · LinkedIn Learning · 29 minutes<br><a href="https://www.linkedin.com/learning/project-management-foundations-requirements-2019" style="color:#2E4A66;text-decoration:underline;font-weight:500;word-break:break-all">https://www.linkedin.com/learning/project-management-foundations-requirements-2019</a></p></td></tr></table></td></tr></table></td></tr>
+</table>
+</td></tr>
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+</td></tr>
+</table>
+</div>
+</article>
+</main>

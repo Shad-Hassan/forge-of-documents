@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Forge of Documents II
 
-## Getting Started
+Fullstack Next.js document generation harness. Configure precise dials, generate documents via headless Claude.
 
-First, run the development server:
+## Setup
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1. **Install dependencies** (already done):
+   ```bash
+   npm install
+   ```
+
+2. **Configure API key**:
+   ```bash
+   cp .env.example .env.local
+   ```
+   Edit `.env.local` and add your Anthropic API key.
+
+3. **Run dev server**:
+   ```bash
+   npm run dev
+   ```
+   Open http://localhost:3000
+
+## Architecture
+
+- **Frontend**: React + Tailwind 4.0 with cosmology colors (ivory, bronze, slate, arcane, ember)
+- **Backend**: Next.js API routes with Claude integration
+- **Document Types**: Email, Proposal, Report, Brief, Case Study
+- **Dials**: Configurable parameters per document type (tone, length, audience, etc.)
+
+## Adding Document Types
+
+Edit `/app/lib/config.ts` and add a new document type to `documentTypes`. Define its dials and system prompt. The API and UI will auto-detect it.
+
+Example dial types:
+- `select`: dropdown with options
+- `text`: text input
+- `number`: numeric input
+- `slider`: range slider
+
+## API Endpoint
+
+**POST** `/api/generate`
+
+Request:
+```json
+{
+  "documentType": "email",
+  "dials": {
+    "tone": "formal",
+    "length": "medium",
+    "subject": "Project Update",
+    "keyPoints": "timeline, budget"
+  }
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Response:
+```json
+{
+  "success": true,
+  "content": "...",
+  "metadata": {
+    "documentType": "email",
+    "model": "claude-opus-4-1",
+    "tokensUsed": 342
+  }
+}
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Build for production:
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+Or deploy to Vercel:
+```bash
+vercel
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Set `ANTHROPIC_API_KEY` in production environment variables.

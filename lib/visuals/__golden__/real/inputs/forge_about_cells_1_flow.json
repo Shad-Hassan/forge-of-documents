@@ -1,0 +1,113 @@
+{
+ "label": "Many tools, one screen",
+ "lanes": [
+  {
+   "label": "Your tools",
+   "nodes": [
+    {
+     "id": "t1",
+     "kind": "start",
+     "tag": "Code",
+     "title": "GitHub"
+    },
+    {
+     "id": "t2",
+     "kind": "start",
+     "tag": "Websites",
+     "title": "Vercel"
+    },
+    {
+     "id": "t3",
+     "kind": "start",
+     "tag": "Database",
+     "title": "Supabase"
+    },
+    {
+     "id": "t4",
+     "kind": "start",
+     "tag": "AI builder",
+     "title": "Lovable"
+    }
+   ]
+  },
+  {
+   "label": "One screen",
+   "nodes": [
+    {
+     "id": "f0",
+     "kind": "start",
+     "tag": "Notes",
+     "title": "Obsidian"
+    },
+    {
+     "id": "f1",
+     "kind": "manual",
+     "tag": "Your computer",
+     "title": "ForgeOfCreation"
+    }
+   ]
+  },
+  {
+   "label": "Shows you",
+   "nodes": [
+    {
+     "id": "s1",
+     "kind": "target",
+     "title": "What is set up"
+    },
+    {
+     "id": "s2",
+     "kind": "hold",
+     "title": "What is missing"
+    },
+    {
+     "id": "s3",
+     "kind": "decision",
+     "title": "The one thing to do next"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "t1",
+   "f1",
+   ""
+  ],
+  [
+   "t2",
+   "f1",
+   ""
+  ],
+  [
+   "t3",
+   "f1",
+   ""
+  ],
+  [
+   "t4",
+   "f1",
+   ""
+  ],
+  [
+   "f0",
+   "f1",
+   ""
+  ],
+  [
+   "f1",
+   "s1",
+   ""
+  ],
+  [
+   "f1",
+   "s2",
+   ""
+  ],
+  [
+   "f1",
+   "s3",
+   ""
+  ]
+ ]
+}

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<title>Fixture &amp; &lt;test&gt; &quot;quoted&quot; &#x27;single&#x27; page</title>
+<style>
+
+*,*::before,*::after{box-sizing:border-box}
+html{color-scheme:light only}
+html,body{margin:0}
+body{background:#EEF0F5;color:#111114;font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
+.shell{display:grid;grid-template-columns:232px minmax(0,1fr);min-height:100vh}
+.sidebar{background:#F9FAFB;border-right:1px solid #D5D8DB;padding:20px 14px}
+.brand{font-weight:700;font-size:15px;letter-spacing:-.01em;padding:4px 10px 18px}
+.brand small{display:block;font-weight:400;color:#5F636A;font-size:12px}
+.main{min-width:0}
+.topbar{position:sticky;top:0;z-index:10;background:rgba(231,234,240,.72);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border-bottom:1px solid #D5D8DB;padding:12px 24px;display:flex;gap:16px;align-items:center}
+.crumb{font-weight:600;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.content{padding:24px}
+.bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}
+.span-3{grid-column:span 3}
+.span-4{grid-column:span 4}
+.span-8{grid-column:span 8}
+.span-12{grid-column:span 12}
+.head{grid-column:1/-1;display:flex;flex-direction:column;gap:6px;padding:4px 2px 8px}
+.head .eyebrow{margin:0;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#5F636A}
+.head h1{margin:0;font-size:28px;font-weight:600;letter-spacing:-.02em;line-height:1.15;text-wrap:balance}
+.head .lede{margin:0;color:#5F636A;max-width:70ch}
+.tile{background:#FFFFFF;border:1px solid #D5D8DB;border-radius:18px;padding:18px;min-width:0;display:flex;flex-direction:column;gap:12px}
+.tile h3{margin:0;font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.3}
+.tile p{margin:0}
+.label{margin:0;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#5F636A}
+.num{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:32px;font-weight:500;letter-spacing:-.02em;line-height:1.1;color:#111114}
+.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+.tbl{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{text-align:left;color:#5F636A;font-weight:600;padding:8px 10px;border-bottom:1px solid #D5D8DB;vertical-align:top}
+td{padding:8px 10px;border-bottom:1px solid #D5D8DB;vertical-align:top;color:#111114}
+.list{display:flex;flex-direction:column;margin:0;padding:0;list-style:none}
+.row{display:grid;grid-template-columns:10px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 2px;border-top:1px solid #D5D8DB}
+.row:first-child{border-top:0}
+.row.plain-row{grid-template-columns:minmax(0,1fr)}
+.row .name{font-weight:500;min-width:0;overflow-wrap:anywhere}
+.row .meta{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:12px;color:#5F636A;text-align:right;white-space:nowrap}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.dot.ok{background:#137D41}
+.dot.warn{background:#DC9E12}
+.dot.risk{background:#D42325}
+.callout{border-left:4px solid #D5D8DB}
+.callout.info{border-left-color:#006BE8}
+.callout.warn{border-left-color:#DC9E12}
+.callout.ok{border-left-color:#137D41}
+.callout .label{color:#111114}
+.seal{font-size:12px;color:#5F636A;border-top:1px solid #D5D8DB;padding-top:14px;gap:4px}
+.seal p{margin:0}
+.note{margin:0;font-size:12px;color:#5F636A}
+code{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:.92em;background:#ECEFF2;color:#111114;border-radius:10px;padding:1px 5px;font-variant-ligatures:none}
+strong{font-weight:600;color:#111114}
+.section{grid-column:1/-1;margin:12px 0 0;padding-top:16px;border-top:1px solid #D5D8DB;font-size:20px;font-weight:600;letter-spacing:-.015em;line-height:1.25;color:#111114}
+.fig{margin:0}
+.fig img{display:block;width:100%;height:auto;border:1px solid #D5D8DB;border-radius:10px}
+.fig figcaption{font-size:12px;color:#5F636A}
+.flow-wrap{overflow-x:auto}
+.flow-wrap svg{display:block}
+@media (max-width:1080px){.span-3,.span-4{grid-column:span 6}.span-8{grid-column:span 12}}
+@media (max-width:760px){
+  .shell{grid-template-columns:1fr}
+  .sidebar{display:none}
+  .content{padding:16px}
+  .topbar{padding:10px 16px}
+  .bento{grid-template-columns:minmax(0,1fr)}
+  .span-3,.span-4,.span-8,.span-12{grid-column:1/-1}
+  .head h1{font-size:24px}
+  .num{font-size:26px}
+}
+</style>
+</head>
+<body><div class="shell"><aside class="sidebar"><div class="brand">Athena<small>Command center</small></div></aside><div class="main"><header class="topbar"><div class="crumb">Fixture &amp; &lt;test&gt; &quot;quoted&quot; &#x27;single&#x27; page</div></header><main class="content"><div class="bento"><section class="head"><p class="eyebrow">Fixture &amp; &lt;eyebrow&gt; &quot;x&quot; &#x27;y&#x27;</p><h1>Every block &lt;type&gt; &amp; &quot;quotes&quot; &#x27;apostrophes&#x27;</h1><p class="lede">Lede with &amp; ampersand, &lt; less than, &gt; greater than, &quot;double&quot; and &#x27;single&#x27; quotes.</p></section><article class="tile span-3"><p class="label">Sessions &amp; &lt;active&gt;</p><div class="num">1,284</div><p class="note">note with <strong>bold</strong> &amp; <code>code &lt;x&gt;</code></p></article><article class="tile span-3"><p class="label">Uptime &quot;30 day&quot;</p><div class="num">98.4%</div></article><article class="tile span-3"><p class="label">Open &#x27;risks&#x27;</p><div class="num">7</div></article><article class="tile span-3"><p class="label">Cost &lt;MTD&gt;</p><div class="num">$4,112</div></article><h2 class="section">Section &amp; &lt;heading&gt; &quot;h2&quot;</h2><article class="tile span-8"><h3>Span 2 tile with list &amp; &lt;tags&gt;</h3><p>First paragraph, with &amp; &lt; &gt; &quot; &#x27; all escaped.</p><p>Second paragraph: a &lt;b&gt;bold&lt;/b&gt; attempt stays literal text.</p><ul class="plain"><li>Item &amp; one</li><li>Item &lt;two&gt;</li><li>Item &quot;three&quot;</li></ul></article><article class="tile span-4"><h3>Span 1 tile</h3><p>One third of the row.</p></article><article class="tile span-12"><h3>Span 3 tile (default full row)</h3><p>Full row, no span set.</p></article><article class="tile span-12"><div class="tbl"><table><thead><tr><th>Script &amp; &lt;cmd&gt;</th><th>Purpose &quot;quoted&quot;</th><th>Runs</th></tr></thead><tbody><tr><td>build.py --check &amp; exit</td><td>Gate: &#x27;PASS&#x27; or FAIL</td><td>3</td></tr><tr><td>grep &lt;pattern&gt;</td><td>Find &quot;x&quot; &amp; y</td><td>8</td></tr></tbody></table></div></article><article class="tile span-4"><ul class="list"><li class="row"><span class="dot risk"></span><span class="name">Payments &amp; gateway</span><span class="meta">Critical</span></li><li class="row"><span class="dot warn"></span><span class="name">Ledger &lt;sync&gt;</span><span class="meta">Watch</span></li><li class="row"><span class="dot ok"></span><span class="name">Auth &quot;service&quot;</span><span class="meta">OK</span></li><li class="row plain-row"><span class="name">Plain row, no status</span></li></ul></article><article class="tile span-12 callout info"><p class="label">Info</p><p>Info callout with &amp; &lt; &gt; &quot; &#x27;.</p></article><article class="tile span-12 callout warn"><p class="label">Warning</p><p>Warn callout: needs attention &amp; review.</p></article><article class="tile span-12 callout ok"><p class="label">OK</p><p>OK callout: &#x27;healthy&#x27; &lt;now&gt;.</p></article><footer class="tile span-12 seal"><p>Sealed by Claude &amp; &lt;Shad&gt;</p><p>Source: Fixture &quot;source&quot; &#x27;file&#x27;</p><p>2026-11-24 · version 1</p></footer><article class="tile span-12"><h3>Injection test</h3><p><strong>&lt;script&gt;x&lt;/script&gt;</strong></p></article><article class="tile span-12 flow"><h3>Flow &amp; &lt;diagram&gt;</h3><div class="flow-wrap"><svg id="athena-flow-13" viewBox="0 0 902 440" width="902" height="440" role="img" aria-label="Flow &amp; &lt;diagram&gt;" xmlns="http://www.w3.org/2000/svg"><defs><marker id="athena-flow-13-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5F636A"/></marker></defs><text x="866" y="60" text-anchor="end" font-size="13" font-weight="600" fill="#5F636A">Lane &lt;one&gt;</text><text x="866" y="286" text-anchor="end" font-size="13" font-weight="600" fill="#5F636A">Lane two</text><g><rect x="36" y="66" width="250" height="112" rx="16" fill="#FFFFFF" stroke="#D5D8DB"/><rect x="50" y="82" width="4" height="80" rx="2" fill="#006BE8"/><text x="64" y="96" font-size="12" font-weight="600" fill="#5F636A">T&amp;1</text><text x="64" y="118" font-size="14" font-weight="600" fill="#111114">Start &amp; &lt;go&gt;</text><text x="64" y="161" font-size="12.5" fill="#5F636A">sub &quot;q&quot;</text></g><g><rect x="326" y="66" width="250" height="112" rx="16" fill="#FFFFFF" stroke="#D5D8DB"/><rect x="340" y="82" width="4" height="80" rx="2" fill="#5F636A"/><text x="354" y="118" font-size="14" font-weight="600" fill="#111114">Manual &#x27;step&#x27;</text></g><g><rect x="36" y="292" width="250" height="112" rx="16" fill="#FFFFFF" stroke="#D5D8DB"/><rect x="50" y="308" width="4" height="80" rx="2" fill="#DC9E12"/><text x="64" y="344" font-size="14" font-weight="600" fill="#111114">On hold</text><text x="64" y="387" font-size="12.5" fill="#5F636A">waiting</text></g><g><rect x="326" y="292" width="250" height="112" rx="16" fill="#FFFFFF" stroke="#D5D8DB"/><rect x="340" y="308" width="4" height="80" rx="2" fill="#006BE8"/><text x="354" y="344" font-size="14" font-weight="600" fill="#111114">Decide?</text></g><g><rect x="616" y="292" width="250" height="112" rx="16" fill="#FFFFFF" stroke="#D5D8DB"/><rect x="630" y="308" width="4" height="80" rx="2" fill="#137D41"/><text x="644" y="344" font-size="14" font-weight="600" fill="#111114">Target ok</text></g><path d="M286,122 L324,122" fill="none" stroke="#5F636A" stroke-opacity=".8" stroke-width="1.6" marker-end="url(#athena-flow-13-arrow)"/><path d="M451,180 V235 H161 V290" fill="none" stroke="#5F636A" stroke-opacity=".8" stroke-width="1.6" marker-end="url(#athena-flow-13-arrow)"/><rect x="262" y="211" width="88" height="20" rx="10" fill="#FFFFFF" stroke="#D5D8DB"/><text x="306" y="225" text-anchor="middle" font-size="12" fill="#111114">yes &amp; &lt;no&gt;</text><path d="M286,348 L324,348" fill="none" stroke="#5F636A" stroke-opacity=".8" stroke-width="1.6" marker-end="url(#athena-flow-13-arrow)"/><path d="M576,348 L614,348" fill="none" stroke="#5F636A" stroke-opacity=".8" stroke-width="1.6" marker-end="url(#athena-flow-13-arrow)"/></svg></div></article><figure class="tile fig span-8"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="Tiny &quot;png&quot; &amp; &lt;alt&gt;"><figcaption>Caption <strong>bold</strong> &amp; <code>code</code></figcaption></figure></div></main></div></div></body>
+</html>

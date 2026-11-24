@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<title>nasir-claude-chat-qa-status-nov17-v6</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap">
+<style>:root{color-scheme:light only;supported-color-schemes:light}</style>
+</head>
+<body style="margin:0;padding:0;background-color:#F1F3F4">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#F1F3F4" style="background-color:#F1F3F4">
+<tr><td align="center" style="padding:24px 16px">
+<!--[if mso]><table role="presentation" width="640" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;max-width:640px;background-color:#FFFFFF;border:1px solid #E3E6E8;border-radius:16px">
+<tr><td style="padding:32px 32px 32px 24px">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23">Hello Nasir,</p></td></tr>
+<tr><td style="padding:0 0 0 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-left:3px solid #2E4A66;padding:0 0 0 16px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Thank you for sharing the Claude chat conversation: <a href="https://claude.ai/share/ee4365be-afae-4e52-bac2-151b024d26c0" style="color:#2E4A66;text-decoration:underline;text-decoration-color:#AFC0D1;font-weight:500;overflow-wrap:anywhere;word-break:normal">https://claude.ai/share/ee4365be-afae-4e52-bac2-151b024d26c0</a></p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Done: The chat helped me understand the missing key parts, along with the GHL connection to calendar protocols. I passed the chat and that context to Mr Abaiyaz, and it is now urgent tier priority.</p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Waiting: Back-to-back QA sessions run today, Tuesday, November 17 (PST). We are waiting on those results.</p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Next: Whether or not the functionality and tests pass, you will have a confirmed status update by Wednesday, November 18 (PST), based on today&#x27;s QA results.</p></td></tr>
+<tr><td style="padding:8px 0 8px 0"><h2 style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:24px;font-weight:600;color:#1B1F23">TLDR of the shared chat</h2></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">The ask: a Claude system that tracks team tasks and follow-ups from G Suite email and sends reminders, so due dates are not missed.</p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">The design: emails labeled &quot;Action&quot; go into a Google Sheet. A scheduled Claude run each weekday morning flags overdue and due-soon tasks, checks threads for replies, and sends a digest.</p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Two conditions from the chat: Claude only drafts reminders (&quot;Never send email. Drafts only.&quot;), and each team member connects their own Gmail and Google Sheets in their own Claude account, with the Workspace admin allowing it.</p></td></tr>
+<tr><td style="padding:8px 0 8px 0"><h2 style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:24px;font-weight:600;color:#1B1F23">The flow, step by step</h2></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Highlighted steps need a person. The other steps Claude does.</p></td></tr>
+<tr><td style="padding:0 0 16px 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#FBF4E2" style="background-color:#FBF4E2;border-left:3px solid #8A6414;border-radius:0 8px 8px 0;padding:16px"><p style="margin:0 0 8px 0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:24px;font-weight:600;color:#8A6414;overflow-wrap:anywhere;word-break:break-word">1 · placeholder</p><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:24px;color:#1B1F23">Claude</p></td></tr></table></td></tr>
+<tr><td style="padding:0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Please let me know if this flowchart does not match the alignment you envisioned in your shared Claude chat.</p></td></tr></table></td></tr></table></td></tr>
+</table>
+</td></tr>
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+</td></tr>
+</table>
+</body>
+</html>

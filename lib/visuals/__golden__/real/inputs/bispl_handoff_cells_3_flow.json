@@ -1,0 +1,100 @@
+{
+ "label": "Dated plan from 23 November to after Sir's QA",
+ "lanes": [
+  {
+   "label": "23 Nov · done",
+   "nodes": [
+    {
+     "id": "docs",
+     "kind": "start",
+     "title": "Sir's 3 files received",
+     "sub": "CV, publications, deck"
+    },
+    {
+     "id": "notes",
+     "kind": "target",
+     "title": "Notes 01 to 06 written",
+     "sub": "plan, deck, app plans, boilerplates"
+    }
+   ]
+  },
+  {
+   "label": "24 Nov · draft",
+   "nodes": [
+    {
+     "id": "qa",
+     "kind": "manual",
+     "title": "Draft the QA document",
+     "sub": "scope, content map, C1 to C8, Q1 to Q7"
+    },
+    {
+     "id": "scaffold",
+     "kind": "manual",
+     "title": "Internal scaffold",
+     "sub": "data JSON, App 1, App 2",
+     "tag": "Internal"
+    }
+   ]
+  },
+  {
+   "label": "25 Nov · before 18:04 BDT",
+   "nodes": [
+    {
+     "id": "send",
+     "kind": "decision",
+     "title": "QA document sent",
+     "sub": "through /reddington, one page"
+    }
+   ]
+  },
+  {
+   "label": "After Sir's QA",
+   "nodes": [
+    {
+     "id": "wait",
+     "kind": "hold",
+     "title": "Sir confirms numbers",
+     "sub": "permissions, domain, juniors"
+    },
+    {
+     "id": "demo",
+     "kind": "target",
+     "title": "Prototype, then demo",
+     "sub": "only after his OK"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "docs",
+   "notes",
+   ""
+  ],
+  [
+   "notes",
+   "qa",
+   ""
+  ],
+  [
+   "qa",
+   "scaffold",
+   ""
+  ],
+  [
+   "qa",
+   "send",
+   "48 h"
+  ],
+  [
+   "send",
+   "wait",
+   ""
+  ],
+  [
+   "wait",
+   "demo",
+   "OK"
+  ]
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "label": "The door",
+ "lanes": [
+  {
+   "label": "This machine",
+   "nodes": [
+    {
+     "id": "b1",
+     "kind": "start",
+     "title": "ops/.env",
+     "sub": "GITHUB_TOKEN, gitignored"
+    },
+    {
+     "id": "b2",
+     "kind": "manual",
+     "title": "Local server",
+     "sub": "127.0.0.1:8787, reads the token"
+    }
+   ]
+  },
+  {
+   "label": "GitHub",
+   "nodes": [
+    {
+     "id": "b3",
+     "kind": "target",
+     "title": "GitHub",
+     "sub": "token sent by the server only"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "b1",
+   "b2",
+   "read on start"
+  ],
+  [
+   "b2",
+   "b3",
+   "API and git over HTTPS"
+  ]
+ ]
+}

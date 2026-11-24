@@ -55,3 +55,6 @@ Thumbs.db
 # localhost dev
 .localhost
 *.log
+
+# forge runtime data (uploads, outputs)
+/data/

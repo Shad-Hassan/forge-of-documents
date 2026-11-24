@@ -1,0 +1,80 @@
+{
+ "label": "Where a new file goes",
+ "lanes": [
+  {
+   "label": "Intake",
+   "nodes": [
+    {
+     "id": "a1",
+     "kind": "start",
+     "title": "A new file in templateTailwind"
+    },
+    {
+     "id": "a2",
+     "kind": "decision",
+     "title": "What is it?"
+    }
+   ]
+  },
+  {
+   "label": "Lands in",
+   "nodes": [
+    {
+     "id": "b1",
+     "kind": "manual",
+     "tag": "Gitignored",
+     "title": "ops/.env",
+     "sub": "Keys and script paths"
+    },
+    {
+     "id": "b2",
+     "kind": "manual",
+     "tag": "Gitignored",
+     "title": "ops/scripts/",
+     "sub": ".sh and .py files"
+    },
+    {
+     "id": "b3",
+     "kind": "manual",
+     "tag": "Gitignored",
+     "title": "ops/config/",
+     "sub": ".toml and other configs"
+    },
+    {
+     "id": "b4",
+     "kind": "target",
+     "tag": "In git",
+     "title": "src/, server/, supabase/",
+     "sub": "App code and migrations"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "a1",
+   "a2",
+   ""
+  ],
+  [
+   "a2",
+   "b1",
+   "secret"
+  ],
+  [
+   "a2",
+   "b2",
+   "script"
+  ],
+  [
+   "a2",
+   "b3",
+   "config"
+  ],
+  [
+   "a2",
+   "b4",
+   "app code"
+  ]
+ ]
+}

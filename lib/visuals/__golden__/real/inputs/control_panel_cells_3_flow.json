@@ -1,0 +1,68 @@
+{
+ "label": "Ignore it or keep it",
+ "lanes": [
+  {
+   "label": "If ignored",
+   "nodes": [
+    {
+     "id": "x1",
+     "kind": "start",
+     "title": "supabase/ in .gitignore"
+    },
+    {
+     "id": "x2",
+     "kind": "manual",
+     "title": "Migrations never pushed"
+    },
+    {
+     "id": "x3",
+     "kind": "hold",
+     "tag": "Risk",
+     "title": "New machine: nothing to rebuild from"
+    }
+   ]
+  },
+  {
+   "label": "If kept",
+   "nodes": [
+    {
+     "id": "k1",
+     "kind": "start",
+     "title": "supabase/ in git"
+    },
+    {
+     "id": "k2",
+     "kind": "manual",
+     "title": "Migrations versioned"
+    },
+    {
+     "id": "k3",
+     "kind": "target",
+     "title": "supabase db push rebuilds the schema"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "x1",
+   "x2",
+   ""
+  ],
+  [
+   "x2",
+   "x3",
+   ""
+  ],
+  [
+   "k1",
+   "k2",
+   ""
+  ],
+  [
+   "k2",
+   "k3",
+   ""
+  ]
+ ]
+}

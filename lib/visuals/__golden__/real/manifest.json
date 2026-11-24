@@ -1,0 +1,212 @@
+[
+ {
+  "key": "forge_about_cells_0_flow",
+  "src": "warden_forge_about.json",
+  "path": "/cells/0/flow",
+  "label": "Start it, then look",
+  "nonascii": false
+ },
+ {
+  "key": "forge_about_cells_1_flow",
+  "src": "warden_forge_about.json",
+  "path": "/cells/1/flow",
+  "label": "Many tools, one screen",
+  "nonascii": false
+ },
+ {
+  "key": "forge_about_cells_2_flow",
+  "src": "warden_forge_about.json",
+  "path": "/cells/2/flow",
+  "label": "Before and after",
+  "nonascii": false
+ },
+ {
+  "key": "forge_about_cells_3_flow",
+  "src": "warden_forge_about.json",
+  "path": "/cells/3/flow",
+  "label": "Two vaults, two jobs",
+  "nonascii": false
+ },
+ {
+  "key": "forge_about_cells_4_flow",
+  "src": "warden_forge_about.json",
+  "path": "/cells/4/flow",
+  "label": "From click to record",
+  "nonascii": true
+ },
+ {
+  "key": "forge_about_cells_5_flow",
+  "src": "warden_forge_about.json",
+  "path": "/cells/5/flow",
+  "label": "The sidebar",
+  "nonascii": false
+ },
+ {
+  "key": "forge_about_cells_6_flow",
+  "src": "warden_forge_about.json",
+  "path": "/cells/6/flow",
+  "label": "The first session, in order",
+  "nonascii": false
+ },
+ {
+  "key": "forge_about_cells_7_flow",
+  "src": "warden_forge_about.json",
+  "path": "/cells/7/flow",
+  "label": "Done and waiting",
+  "nonascii": false
+ },
+ {
+  "key": "forge_about_cells_8_flow",
+  "src": "warden_forge_about.json",
+  "path": "/cells/8/flow",
+  "label": "The road ahead",
+  "nonascii": false
+ },
+ {
+  "key": "forge_about_cells_9_flow",
+  "src": "warden_forge_about.json",
+  "path": "/cells/9/flow",
+  "label": "Where each word lives",
+  "nonascii": false
+ },
+ {
+  "key": "shadrian_bliss_cells_0_flow",
+  "src": "warden_shadrian_bliss.json",
+  "path": "/cells/0/flow",
+  "label": "The run, start to finish",
+  "nonascii": false
+ },
+ {
+  "key": "shadrian_bliss_cells_1_flow",
+  "src": "warden_shadrian_bliss.json",
+  "path": "/cells/1/flow",
+  "label": "Which skill takes the email",
+  "nonascii": false
+ },
+ {
+  "key": "shadrian_bliss_cells_2_flow",
+  "src": "warden_shadrian_bliss.json",
+  "path": "/cells/2/flow",
+  "label": "Does this line go in the email?",
+  "nonascii": false
+ },
+ {
+  "key": "shadrian_bliss_cells_3_flow",
+  "src": "warden_shadrian_bliss.json",
+  "path": "/cells/3/flow",
+  "label": "The Waiting on loop",
+  "nonascii": false
+ },
+ {
+  "key": "routine_setup_cells_0_flow",
+  "src": "warden_routine_setup.json",
+  "path": "/cells/0/flow",
+  "label": "Why it failed",
+  "nonascii": false
+ },
+ {
+  "key": "routine_setup_cells_1_flow",
+  "src": "warden_routine_setup.json",
+  "path": "/cells/1/flow",
+  "label": "The door",
+  "nonascii": false
+ },
+ {
+  "key": "routine_setup_cells_2_flow",
+  "src": "warden_routine_setup.json",
+  "path": "/cells/2/flow",
+  "label": "Clone",
+  "nonascii": false
+ },
+ {
+  "key": "routine_setup_cells_3_flow",
+  "src": "warden_routine_setup.json",
+  "path": "/cells/3/flow",
+  "label": "Push",
+  "nonascii": false
+ },
+ {
+  "key": "routine_setup_cells_4_flow",
+  "src": "warden_routine_setup.json",
+  "path": "/cells/4/flow",
+  "label": "Gate",
+  "nonascii": false
+ },
+ {
+  "key": "bispl_handoff_cells_3_flow",
+  "src": "warden_bispl_handoff.json",
+  "path": "/cells/3/flow",
+  "label": "Dated plan from 23 November to after Sir's QA",
+  "nonascii": true
+ },
+ {
+  "key": "bispl_handoff_cells_4_flow",
+  "src": "warden_bispl_handoff.json",
+  "path": "/cells/4/flow",
+  "label": "Data flow from source files through review to the portfolio site",
+  "nonascii": true
+ },
+ {
+  "key": "control_panel_cells_0_flow",
+  "src": "warden_control_panel.json",
+  "path": "/cells/0/flow",
+  "label": "Where a new file goes",
+  "nonascii": false
+ },
+ {
+  "key": "control_panel_cells_1_flow",
+  "src": "warden_control_panel.json",
+  "path": "/cells/1/flow",
+  "label": "Who reads ops/.env",
+  "nonascii": false
+ },
+ {
+  "key": "control_panel_cells_2_flow",
+  "src": "warden_control_panel.json",
+  "path": "/cells/2/flow",
+  "label": "Human in the loop",
+  "nonascii": false
+ },
+ {
+  "key": "control_panel_cells_3_flow",
+  "src": "warden_control_panel.json",
+  "path": "/cells/3/flow",
+  "label": "Ignore it or keep it",
+  "nonascii": false
+ },
+ {
+  "key": "control_panel_cells_5_flow",
+  "src": "warden_control_panel.json",
+  "path": "/cells/5/flow",
+  "label": "One request, end to end",
+  "nonascii": false
+ },
+ {
+  "key": "control_panel_cells_6_flow",
+  "src": "warden_control_panel.json",
+  "path": "/cells/6/flow",
+  "label": "Linking each CLI",
+  "nonascii": false
+ },
+ {
+  "key": "protocols_s2_flows_0",
+  "src": "warden_protocols.json",
+  "path": "/s2/flows/0",
+  "label": "Invocation, modes and decision",
+  "nonascii": false
+ },
+ {
+  "key": "protocols_s2_flows_1",
+  "src": "warden_protocols.json",
+  "path": "/s2/flows/1",
+  "label": "Shared post-invocation flow",
+  "nonascii": false
+ },
+ {
+  "key": "protocols_s2_flows_2",
+  "src": "warden_protocols.json",
+  "path": "/s2/flows/2",
+  "label": "After publish or wrap",
+  "nonascii": false
+ }
+]

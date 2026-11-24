@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<title>sbt-site-tweaks-wrap</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap">
+<style>:root{color-scheme:light only;supported-color-schemes:light}</style>
+</head>
+<body style="margin:0;padding:0;background-color:#F1F3F4">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#F1F3F4" style="background-color:#F1F3F4">
+<tr><td align="center" style="padding:24px 16px">
+<!--[if mso]><table role="presentation" width="640" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;max-width:640px;background-color:#FFFFFF;border:1px solid #E3E6E8;border-radius:16px">
+<tr><td style="padding:32px 32px 32px 24px">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23">Hello Nasir,</p></td></tr>
+<tr><td style="padding:0 0 0 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-left:3px solid #2E4A66;padding:0 0 0 16px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">I have wrapped up the tasks related to the SBT SITE TWEAKS<br>URL: <a href="https://lovable.dev/projects/5423acd1-f363-4014-9e14-2b406da3575a" style="color:#2E4A66;text-decoration:underline;text-decoration-color:#AFC0D1;font-weight:500;overflow-wrap:anywhere;word-break:normal">https://lovable.dev/projects/5423acd1-f363-4014-9e14-2b406da3575a</a><br>Domain: <a href="https://synergybuildingtech.com/" style="color:#2E4A66;text-decoration:underline;text-decoration-color:#AFC0D1;font-weight:500;overflow-wrap:anywhere;word-break:normal">https://synergybuildingtech.com/</a></p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Synergy Building Tech new office address in the Philippines<br>Due date 10.13.2026<br>209 Fili St., Caloocan City Philippines</p></td></tr>
+<tr><td style="padding:0 0 16px 0"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:32px;color:#1B1F23;overflow-wrap:anywhere;word-break:break-word">Along with a section that showcase &quot;Synergy Around the World&quot; -<br>Screenshot attached</p></td></tr>
+<tr><td style="padding:0 0 24px 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="160" align="center" bgcolor="#F7F8F9" style="background-color:#F7F8F9;border:1.5px dashed #CDD2D5;border-radius:8px;height:160px;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;color:#80888F">Paste screenshot here</td></tr></table></td></tr>
+<tr><td style="padding:8px 0 0 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-top:1px solid #E3E6E8;padding-top:16px"><p style="margin:0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:24px;color:#4F575E">Shad</p><p style="margin:8px 0 0 0;font-family:'Geist',Helvetica,Arial,sans-serif;font-size:16px;line-height:24px;font-weight:600;color:#1B1F23"></p></td></tr></table></td></tr></table></td></tr></table></td></tr>
+</table>
+</td></tr>
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+</td></tr>
+</table>
+</body>
+</html>

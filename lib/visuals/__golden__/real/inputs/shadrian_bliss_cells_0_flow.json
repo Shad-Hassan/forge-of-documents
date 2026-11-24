@@ -1,0 +1,83 @@
+{
+ "label": "The run, start to finish",
+ "lanes": [
+  {
+   "label": "Shad",
+   "nodes": [
+    {
+     "id": "r1",
+     "kind": "start",
+     "title": "Types /shadrian-bliss",
+     "sub": "or asks for a leadership status email"
+    },
+    {
+     "id": "r2",
+     "kind": "manual",
+     "title": "Gives the facts",
+     "sub": "his message, or the record"
+    }
+   ]
+  },
+  {
+   "label": "Claude",
+   "nodes": [
+    {
+     "id": "r3",
+     "kind": "manual",
+     "title": "Drafts the email",
+     "sub": "Hello team, then Done, Waiting on, Next"
+    },
+    {
+     "id": "r4",
+     "kind": "decision",
+     "title": "Waiting on in play?",
+     "sub": "asks Shad one item at a time"
+    },
+    {
+     "id": "r5",
+     "kind": "manual",
+     "title": "Checks every line",
+     "sub": "source, no apology, no private context"
+    }
+   ]
+  },
+  {
+   "label": "Out",
+   "nodes": [
+    {
+     "id": "r6",
+     "kind": "target",
+     "title": "Pastes the email in chat",
+     "sub": "and writes the file"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "r1",
+   "r2",
+   ""
+  ],
+  [
+   "r2",
+   "r3",
+   ""
+  ],
+  [
+   "r3",
+   "r4",
+   ""
+  ],
+  [
+   "r4",
+   "r5",
+   "answers in"
+  ],
+  [
+   "r5",
+   "r6",
+   ""
+  ]
+ ]
+}

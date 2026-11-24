@@ -1,0 +1,117 @@
+{
+ "label": "Human in the loop",
+ "lanes": [
+  {
+   "label": "Pick",
+   "nodes": [
+    {
+     "id": "p1",
+     "kind": "start",
+     "title": "You pick an action"
+    },
+    {
+     "id": "p2",
+     "kind": "manual",
+     "title": "Server maps it to fixed args",
+     "sub": "Never a shell string"
+    },
+    {
+     "id": "p3",
+     "kind": "decision",
+     "title": "Read or write?"
+    }
+   ]
+  },
+  {
+   "label": "Gate",
+   "nodes": [
+    {
+     "id": "g1",
+     "kind": "manual",
+     "tag": "Read",
+     "title": "Runs on click"
+    },
+    {
+     "id": "g2",
+     "kind": "manual",
+     "tag": "Write",
+     "title": "Preview shown"
+    },
+    {
+     "id": "g3",
+     "kind": "decision",
+     "title": "You approve?"
+    }
+   ]
+  },
+  {
+   "label": "Record",
+   "nodes": [
+    {
+     "id": "o1",
+     "kind": "target",
+     "title": "Runs, result logged"
+    },
+    {
+     "id": "o2",
+     "kind": "hold",
+     "tag": "Later",
+     "title": "Game layer scores the log"
+    },
+    {
+     "id": "o3",
+     "kind": "hold",
+     "tag": "Rejected",
+     "title": "Logged, nothing runs"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "p1",
+   "p2",
+   ""
+  ],
+  [
+   "p2",
+   "p3",
+   ""
+  ],
+  [
+   "p3",
+   "g1",
+   "read"
+  ],
+  [
+   "p3",
+   "g2",
+   "write"
+  ],
+  [
+   "g2",
+   "g3",
+   ""
+  ],
+  [
+   "g1",
+   "o1",
+   ""
+  ],
+  [
+   "g3",
+   "o1",
+   "yes"
+  ],
+  [
+   "g3",
+   "o3",
+   "no"
+  ],
+  [
+   "o1",
+   "o2",
+   ""
+  ]
+ ]
+}

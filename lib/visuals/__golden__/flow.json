@@ -1,0 +1,24 @@
+{
+  "lanes": [
+    {"label": "Intake & triage", "nodes": [
+      {"id": "n1", "kind": "start", "title": "Request arrives from the team & ops inbox with a long descriptive title that must wrap across several lines"},
+      {"id": "n2", "kind": "manual", "title": "Check the calendar & guests", "sub": "Read every attendee list & confirm the Meet link before anything moves"}
+    ]},
+    {"label": "Review", "nodes": [
+      {"id": "n3", "kind": "decision", "title": "Approve & sign off", "sub": "Owner decides, or it goes quietly to the team"},
+      {"id": "n4", "kind": "hold", "title": "Waiting on the vendor API", "sub": "Blocked until the API key arrives"}
+    ]},
+    {"label": "Done & automated", "nodes": [
+      {"id": "n5", "kind": "target", "title": "One consistent event for everyone", "tag": "Auto"},
+      {"id": "n6", "kind": "target", "title": "Confirm & notify the team"}
+    ]}
+  ],
+  "edges": [
+    ["n1", "n2", ""],
+    ["n2", "n3", "Ready & checked"],
+    ["n3", "n4", ""],
+    ["n4", "n5", "Unblocked"],
+    ["n5", "n6", ""],
+    ["n1", "n3", "Fast path"]
+  ]
+}

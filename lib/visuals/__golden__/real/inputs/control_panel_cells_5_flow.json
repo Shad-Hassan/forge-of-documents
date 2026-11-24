@@ -1,0 +1,80 @@
+{
+ "label": "One request, end to end",
+ "lanes": [
+  {
+   "label": "Browser",
+   "nodes": [
+    {
+     "id": "w1",
+     "kind": "start",
+     "title": "UI on :5173"
+    },
+    {
+     "id": "w2",
+     "kind": "manual",
+     "title": "fetch /api/git/status"
+    }
+   ]
+  },
+  {
+   "label": "Dev server",
+   "nodes": [
+    {
+     "id": "d1",
+     "kind": "manual",
+     "title": "Vite proxy",
+     "sub": "/api to 127.0.0.1:8787"
+    },
+    {
+     "id": "d2",
+     "kind": "manual",
+     "title": "Hono API",
+     "sub": "Localhost only"
+    }
+   ]
+  },
+  {
+   "label": "Machine",
+   "nodes": [
+    {
+     "id": "m1",
+     "kind": "manual",
+     "title": "execFile git",
+     "sub": "Fixed arguments, no shell"
+    },
+    {
+     "id": "m2",
+     "kind": "target",
+     "title": "JSON back to the UI"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "w1",
+   "w2",
+   ""
+  ],
+  [
+   "w2",
+   "d1",
+   ""
+  ],
+  [
+   "d1",
+   "d2",
+   ""
+  ],
+  [
+   "d2",
+   "m1",
+   ""
+  ],
+  [
+   "m1",
+   "m2",
+   ""
+  ]
+ ]
+}

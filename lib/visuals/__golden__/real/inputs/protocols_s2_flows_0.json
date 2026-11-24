@@ -1,0 +1,128 @@
+{
+ "label": "Invocation, modes and decision",
+ "lanes": [
+  {
+   "label": "Plexio",
+   "nodes": [
+    {
+     "id": "p1",
+     "kind": "start",
+     "title": "/plexio, or any artifact for Shad with no style named"
+    },
+    {
+     "id": "p2",
+     "kind": "decision",
+     "title": "Another house style named?",
+     "sub": "If yes, that skill runs instead."
+    },
+    {
+     "id": "p3",
+     "kind": "decision",
+     "title": "Mode fits the content?",
+     "sub": "Hard, note, survey-report, thread-record, hard-flowmode."
+    },
+    {
+     "id": "p4",
+     "kind": "manual",
+     "title": "Base patterns",
+     "sub": "No mode fits: use the base plexio patterns."
+    },
+    {
+     "id": "p5",
+     "kind": "target",
+     "title": "Mode chosen",
+     "sub": "Hard mode is the Synergy Universe skin, never warden."
+    }
+   ]
+  },
+  {
+   "label": "Warden",
+   "nodes": [
+    {
+     "id": "w1",
+     "kind": "start",
+     "title": "/warden, or a style word"
+    },
+    {
+     "id": "w2",
+     "kind": "decision",
+     "title": "Outputs already named?"
+    },
+    {
+     "id": "w3",
+     "kind": "manual",
+     "title": "Ask Outputs",
+     "sub": "A Build all (Recommended), B HTML + artifact, C PDF + artifact, D quick artifact."
+    }
+   ]
+  },
+  {
+   "label": "Next",
+   "nodes": [
+    {
+     "id": "n1",
+     "kind": "target",
+     "title": "Shared post-invocation flow",
+     "sub": "Chart 2."
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "p1",
+   "p2",
+   ""
+  ],
+  [
+   "p2",
+   "p3",
+   "no"
+  ],
+  [
+   "p2",
+   "n1",
+   "yes, other skill"
+  ],
+  [
+   "p3",
+   "p5",
+   "fits"
+  ],
+  [
+   "p3",
+   "p4",
+   "no fit"
+  ],
+  [
+   "p4",
+   "n1",
+   ""
+  ],
+  [
+   "p5",
+   "n1",
+   ""
+  ],
+  [
+   "w1",
+   "w2",
+   ""
+  ],
+  [
+   "w2",
+   "w3",
+   "no"
+  ],
+  [
+   "w2",
+   "n1",
+   "yes"
+  ],
+  [
+   "w3",
+   "n1",
+   "pick one"
+  ]
+ ]
+}

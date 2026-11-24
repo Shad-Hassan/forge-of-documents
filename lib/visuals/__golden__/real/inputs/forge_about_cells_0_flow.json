@@ -1,0 +1,73 @@
+{
+ "label": "Start it, then look",
+ "lanes": [
+  {
+   "label": "Start",
+   "nodes": [
+    {
+     "id": "c1",
+     "kind": "start",
+     "title": "Type panel",
+     "sub": "In any terminal"
+    },
+    {
+     "id": "c2",
+     "kind": "manual",
+     "title": "Full-screen view",
+     "sub": "localhost:5180"
+    },
+    {
+     "id": "c3",
+     "kind": "target",
+     "title": "Ctrl+C",
+     "sub": "Servers stop, screen restored"
+    }
+   ]
+  },
+  {
+   "label": "Obsidian page",
+   "nodes": [
+    {
+     "id": "c4",
+     "kind": "target",
+     "tag": "Brain",
+     "title": "3D snapshot of the notes"
+    },
+    {
+     "id": "c5",
+     "kind": "target",
+     "tag": "Skeleton",
+     "title": "3D snapshot of the code"
+    },
+    {
+     "id": "c6",
+     "kind": "manual",
+     "title": "Take a snapshot",
+     "sub": "Adds one to the history"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "c1",
+   "c2",
+   ""
+  ],
+  [
+   "c2",
+   "c3",
+   ""
+  ],
+  [
+   "c4",
+   "c5",
+   ""
+  ],
+  [
+   "c5",
+   "c6",
+   ""
+  ]
+ ]
+}

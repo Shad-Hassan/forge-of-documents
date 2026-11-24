@@ -1,0 +1,99 @@
+{
+ "label": "Push",
+ "lanes": [
+  {
+   "label": "Checks",
+   "nodes": [
+    {
+     "id": "d1",
+     "kind": "start",
+     "title": "Dry run",
+     "sub": "dryRun: true"
+    },
+    {
+     "id": "d2",
+     "kind": "decision",
+     "title": "Origin HTTPS and upstream set?",
+     "sub": "else refuse"
+    },
+    {
+     "id": "d3",
+     "kind": "decision",
+     "title": "Commits ahead of origin?",
+     "sub": "else refuse"
+    },
+    {
+     "id": "d4",
+     "kind": "decision",
+     "title": "Token inside a commit?",
+     "sub": "else continue"
+    }
+   ]
+  },
+  {
+   "label": "Send",
+   "nodes": [
+    {
+     "id": "d5",
+     "kind": "hold",
+     "title": "Refused",
+     "sub": "nothing sent"
+    },
+    {
+     "id": "d6",
+     "kind": "manual",
+     "title": "Read commits and authors",
+     "sub": "confirm the identity"
+    },
+    {
+     "id": "d7",
+     "kind": "target",
+     "title": "Push, no force",
+     "sub": "dryRun false"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "d1",
+   "d2",
+   ""
+  ],
+  [
+   "d2",
+   "d3",
+   "yes"
+  ],
+  [
+   "d3",
+   "d4",
+   "yes"
+  ],
+  [
+   "d4",
+   "d6",
+   "no"
+  ],
+  [
+   "d6",
+   "d7",
+   "yes"
+  ],
+  [
+   "d2",
+   "d5",
+   "no"
+  ],
+  [
+   "d3",
+   "d5",
+   "no"
+  ],
+  [
+   "d4",
+   "d5",
+   "yes"
+  ]
+ ]
+}

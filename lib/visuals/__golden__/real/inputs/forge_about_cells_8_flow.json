@@ -1,0 +1,68 @@
+{
+ "label": "The road ahead",
+ "lanes": [
+  {
+   "label": "Next",
+   "nodes": [
+    {
+     "id": "x1",
+     "kind": "decision",
+     "tag": "1",
+     "title": "Finish setup"
+    },
+    {
+     "id": "x2",
+     "kind": "manual",
+     "tag": "2",
+     "title": "The approval step"
+    },
+    {
+     "id": "x3",
+     "kind": "manual",
+     "tag": "3",
+     "title": "The activity log"
+    }
+   ]
+  },
+  {
+   "label": "Then",
+   "nodes": [
+    {
+     "id": "x4",
+     "kind": "manual",
+     "tag": "4",
+     "title": "The game layer"
+    },
+    {
+     "id": "x5",
+     "kind": "target",
+     "tag": "5",
+     "title": "Threads",
+     "sub": "Connects every section"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "x1",
+   "x2",
+   ""
+  ],
+  [
+   "x2",
+   "x3",
+   ""
+  ],
+  [
+   "x3",
+   "x4",
+   ""
+  ],
+  [
+   "x4",
+   "x5",
+   ""
+  ]
+ ]
+}

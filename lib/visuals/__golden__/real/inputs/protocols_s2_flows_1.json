@@ -1,0 +1,91 @@
+{
+ "label": "Shared post-invocation flow",
+ "lanes": [
+  {
+   "label": "Build",
+   "nodes": [
+    {
+     "id": "b1",
+     "kind": "start",
+     "title": "Mode or option picked"
+    },
+    {
+     "id": "b2",
+     "kind": "manual",
+     "title": "Artifact-design pass",
+     "sub": "Platform mechanics. The skill wins on visual decisions."
+    },
+    {
+     "id": "b3",
+     "kind": "manual",
+     "title": "Build from one script",
+     "sub": "Plexio: 3 outputs, 4 in hard mode. Warden: outputs from the option."
+    }
+   ]
+  },
+  {
+   "label": "Check and publish",
+   "nodes": [
+    {
+     "id": "c1",
+     "kind": "decision",
+     "title": "Screenshot asked?",
+     "sub": "Ask Shad. Never automatic."
+    },
+    {
+     "id": "c2",
+     "kind": "manual",
+     "title": "One 375px shot each, fix in one pass",
+     "sub": "Playwright or Chromium only on yes."
+    },
+    {
+     "id": "c3",
+     "kind": "manual",
+     "title": "Publish, write .meta.json"
+    },
+    {
+     "id": "c4",
+     "kind": "target",
+     "title": "Report full absolute paths"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "b1",
+   "b2",
+   ""
+  ],
+  [
+   "b2",
+   "b3",
+   ""
+  ],
+  [
+   "b3",
+   "c1",
+   ""
+  ],
+  [
+   "c1",
+   "c2",
+   "yes"
+  ],
+  [
+   "c1",
+   "c3",
+   "no"
+  ],
+  [
+   "c2",
+   "c3",
+   ""
+  ],
+  [
+   "c3",
+   "c4",
+   ""
+  ]
+ ]
+}

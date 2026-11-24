@@ -1,0 +1,68 @@
+{
+ "label": "Before and after",
+ "lanes": [
+  {
+   "label": "Before",
+   "nodes": [
+    {
+     "id": "b1",
+     "kind": "start",
+     "title": "Half a dozen services"
+    },
+    {
+     "id": "b2",
+     "kind": "manual",
+     "title": "Jumping between them"
+    },
+    {
+     "id": "b3",
+     "kind": "hold",
+     "tag": "Cost",
+     "title": "Small steps get forgotten"
+    }
+   ]
+  },
+  {
+   "label": "After",
+   "nodes": [
+    {
+     "id": "a1",
+     "kind": "start",
+     "title": "One place"
+    },
+    {
+     "id": "a2",
+     "kind": "manual",
+     "title": "A to-do list that knows each tool"
+    },
+    {
+     "id": "a3",
+     "kind": "target",
+     "title": "Nothing slips"
+    }
+   ]
+  }
+ ],
+ "edges": [
+  [
+   "b1",
+   "b2",
+   ""
+  ],
+  [
+   "b2",
+   "b3",
+   ""
+  ],
+  [
+   "a1",
+   "a2",
+   ""
+  ],
+  [
+   "a2",
+   "a3",
+   ""
+  ]
+ ]
+}
