@@ -5,6 +5,23 @@ import { documentTypes, DocumentType } from "@/lib/config";
 
 type GenerationState = "idle" | "generating" | "done" | "error";
 
+const STATE_LABEL: Record<GenerationState, string> = {
+  idle: "Idle",
+  generating: "Generating",
+  done: "Done",
+  error: "Error",
+};
+
+// Bento tile: sharp corners, void surface, slate line only as a border.
+const tile = "flex flex-col border border-slate-line bg-void-800 p-6";
+const eyebrow = "mb-4 font-mono text-xs uppercase tracking-[0.2em] text-ivory-70";
+const input =
+  "w-full border border-slate-line bg-void-700 px-3 py-2 text-ivory-100 placeholder:text-ivory-70 focus:border-bronze-600 focus:outline-none";
+const primaryBtn =
+  "bg-bronze-600 px-4 py-3 font-semibold text-void-900 transition hover:brightness-110 disabled:bg-void-600 disabled:text-ivory-70";
+const secondaryBtn =
+  "border border-slate-line bg-void-700 px-3 py-1.5 text-sm text-ivory-100 transition hover:border-bronze-600";
+
 export default function DocumentGenerator() {
   const [selectedType, setSelectedType] = useState<DocumentType>("email");
   const [dials, setDials] = useState<Record<string, string | number>>({});
@@ -14,6 +31,7 @@ export default function DocumentGenerator() {
   const [tokensUsed, setTokensUsed] = useState<number>(0);
 
   const config = documentTypes[selectedType];
+  const typeKeys = Object.keys(documentTypes) as DocumentType[];
 
   const handleDialChange = (key: string, value: string | number) => {
     setDials((prev) => ({ ...prev, [key]: value }));
@@ -70,186 +88,181 @@ export default function DocumentGenerator() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-6">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-ivory-100 mb-2">
-            Forge of Documents
-          </h1>
-          <p className="text-slate-400">
-            Generate documents with precise, configurable dials
-          </p>
-        </div>
+    <div className="min-h-screen bg-void-900 p-4 text-ivory-100 md:p-6 xl:p-8">
+      <div className="mx-auto max-w-screen-2xl">
+        {/* Bento grid: 1 col mobile, 2 cols md, 12 cols xl (desktop) */}
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-12">
+          {/* Header tile */}
+          <header className="col-span-full grid border border-slate-line bg-void-800 md:grid-cols-[1fr_auto] xl:grid-cols-12">
+            <div className="p-6 xl:col-span-8 xl:p-8">
+              <p className={eyebrow}>Forge of Documents</p>
+              <h1 className="text-3xl font-bold text-ivory-100 xl:text-4xl">
+                Document Generator
+              </h1>
+              <p className="mt-2 text-ivory-82">
+                Generate documents with precise, configurable dials.
+              </p>
+            </div>
+            <dl className="grid grid-cols-3 border-t border-slate-line md:border-t-0 md:border-l xl:col-span-4">
+              <div className="p-6 xl:p-8">
+                <dt className={eyebrow}>Types</dt>
+                <dd className="text-2xl font-bold text-ivory-100">{typeKeys.length}</dd>
+              </div>
+              <div className="border-l border-slate-line p-6 xl:p-8">
+                <dt className={eyebrow}>State</dt>
+                <dd className="text-2xl font-bold text-bronze-600">{STATE_LABEL[state]}</dd>
+              </div>
+              <div className="border-l border-slate-line p-6 xl:p-8">
+                <dt className={eyebrow}>Tokens</dt>
+                <dd className="text-2xl font-bold text-ivory-100">{tokensUsed}</dd>
+              </div>
+            </dl>
+          </header>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Configuration Panel */}
-          <div className="lg:col-span-1">
-            <div className="bg-slate-800 border border-slate-700 rounded-lg p-6 sticky top-6">
-              <h2 className="text-lg font-semibold text-ivory-100 mb-4">
-                Document Type
-              </h2>
+          {/* Left column: controls as stacked tiles on xl */}
+          <div className="grid gap-4 md:col-span-2 md:grid-cols-2 xl:col-span-4 xl:grid-cols-1">
+            {/* Document type tile */}
+            <section className={tile}>
+              <h2 className={eyebrow}>Document Type</h2>
+              <div className="grid gap-2">
+                {typeKeys.map((type) => {
+                  const active = selectedType === type;
+                  return (
+                    <button
+                      key={type}
+                      onClick={() => handleTypeChange(type)}
+                      aria-pressed={active}
+                      className={`border-l-4 px-4 py-3 text-left transition ${
+                        active
+                          ? "border-l-bronze-600 bg-void-700 text-ivory-100"
+                          : "border-l-slate-line bg-void-900 text-ivory-82 hover:bg-void-700"
+                      }`}
+                    >
+                      <div className="font-semibold">{documentTypes[type].name}</div>
+                      <div className="mt-1 text-sm text-ivory-70">
+                        {documentTypes[type].description}
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </section>
 
-              {/* Type Selector */}
-              <div className="space-y-2 mb-6">
-                {(Object.keys(documentTypes) as DocumentType[]).map((type) => (
-                  <button
-                    key={type}
-                    onClick={() => handleTypeChange(type)}
-                    className={`w-full text-left px-4 py-2 rounded border transition ${
-                      selectedType === type
-                        ? "bg-bronze-600 border-bronze-500 text-ivory-100"
-                        : "bg-slate-700 border-slate-600 text-slate-300 hover:bg-slate-600"
-                    }`}
-                  >
-                    <div className="font-medium">{documentTypes[type].name}</div>
-                    <div className="text-xs opacity-75">
-                      {documentTypes[type].description}
-                    </div>
-                  </button>
+            {/* Dials tile */}
+            <section className={tile}>
+              <h2 className={eyebrow}>Dials</h2>
+              <div className="grid gap-5">
+                {config.dials.map((dial) => (
+                  <div key={dial.key}>
+                    <label className="mb-2 block text-sm font-medium text-ivory-82">
+                      {dial.name}
+                    </label>
+
+                    {dial.type === "select" && dial.options && (
+                      <select
+                        value={dials[dial.key] || dial.default || ""}
+                        onChange={(e) => handleDialChange(dial.key, e.target.value)}
+                        className={input}
+                      >
+                        <option value="">Select...</option>
+                        {dial.options.map((opt) => (
+                          <option key={opt} value={opt}>
+                            {opt}
+                          </option>
+                        ))}
+                      </select>
+                    )}
+
+                    {dial.type === "text" && (
+                      <input
+                        type="text"
+                        placeholder={dial.placeholder}
+                        value={dials[dial.key] || ""}
+                        onChange={(e) => handleDialChange(dial.key, e.target.value)}
+                        className={input}
+                      />
+                    )}
+
+                    {dial.type === "number" && (
+                      <input
+                        type="number"
+                        value={dials[dial.key] || dial.default || ""}
+                        onChange={(e) => handleDialChange(dial.key, e.target.value)}
+                        className={input}
+                      />
+                    )}
+
+                    {dial.type === "slider" && (
+                      <input
+                        type="range"
+                        min={dial.min || 0}
+                        max={dial.max || 100}
+                        value={dials[dial.key] || dial.default || 50}
+                        onChange={(e) => handleDialChange(dial.key, parseInt(e.target.value))}
+                        className="w-full accent-bronze-600"
+                      />
+                    )}
+                  </div>
                 ))}
               </div>
+            </section>
 
-              <div className="border-t border-slate-700 pt-6">
-                <h3 className="text-sm font-semibold text-ivory-100 mb-4">
-                  Dials
-                </h3>
-
-                {/* Dials */}
-                <div className="space-y-4">
-                  {config.dials.map((dial) => (
-                    <div key={dial.key}>
-                      <label className="block text-sm font-medium text-slate-300 mb-2">
-                        {dial.name}
-                      </label>
-
-                      {dial.type === "select" && dial.options && (
-                        <select
-                          value={dials[dial.key] || dial.default || ""}
-                          onChange={(e) =>
-                            handleDialChange(dial.key, e.target.value)
-                          }
-                          className="w-full px-3 py-2 bg-slate-700 border border-slate-600 text-ivory-100 rounded focus:border-bronze-500 focus:outline-none"
-                        >
-                          <option value="">Select...</option>
-                          {dial.options.map((opt) => (
-                            <option key={opt} value={opt}>
-                              {opt}
-                            </option>
-                          ))}
-                        </select>
-                      )}
-
-                      {dial.type === "text" && (
-                        <input
-                          type="text"
-                          placeholder={dial.placeholder}
-                          value={dials[dial.key] || ""}
-                          onChange={(e) =>
-                            handleDialChange(dial.key, e.target.value)
-                          }
-                          className="w-full px-3 py-2 bg-slate-700 border border-slate-600 text-ivory-100 rounded placeholder-slate-500 focus:border-bronze-500 focus:outline-none"
-                        />
-                      )}
-
-                      {dial.type === "number" && (
-                        <input
-                          type="number"
-                          value={dials[dial.key] || dial.default || ""}
-                          onChange={(e) =>
-                            handleDialChange(dial.key, e.target.value)
-                          }
-                          className="w-full px-3 py-2 bg-slate-700 border border-slate-600 text-ivory-100 rounded focus:border-bronze-500 focus:outline-none"
-                        />
-                      )}
-
-                      {dial.type === "slider" && (
-                        <input
-                          type="range"
-                          min={dial.min || 0}
-                          max={dial.max || 100}
-                          value={dials[dial.key] || dial.default || 50}
-                          onChange={(e) =>
-                            handleDialChange(dial.key, parseInt(e.target.value))
-                          }
-                          className="w-full"
-                        />
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Generate Button */}
+            {/* Action tile */}
+            <section className={`${tile} md:col-span-2 xl:col-span-1`}>
+              <h2 className={eyebrow}>Generate</h2>
               <button
                 onClick={handleGenerate}
                 disabled={state === "generating"}
-                className="w-full mt-6 px-4 py-3 bg-bronze-600 hover:bg-bronze-700 disabled:bg-slate-600 text-ivory-100 font-semibold rounded transition"
+                className={primaryBtn}
               >
                 {state === "generating" ? "Generating..." : "Generate Document"}
               </button>
 
               {error && (
-                <div className="mt-4 p-3 bg-red-900 border border-red-700 text-red-100 rounded text-sm">
+                <div
+                  role="alert"
+                  className="mt-4 border-l-4 border-l-ember-500 bg-void-900 p-3 text-sm text-ivory-100"
+                >
                   {error}
                 </div>
               )}
-            </div>
+            </section>
           </div>
 
-          {/* Output Panel */}
-          <div className="lg:col-span-2">
-            {state === "idle" && !generatedContent && (
-              <div className="bg-slate-800 border border-slate-700 rounded-lg p-12 text-center">
-                <p className="text-slate-400">
-                  Configure your dials and click Generate to create a document.
-                </p>
-              </div>
-            )}
-
-            {state === "generating" && (
-              <div className="bg-slate-800 border border-slate-700 rounded-lg p-12 text-center">
-                <div className="inline-block">
-                  <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-bronze-600"></div>
-                </div>
-                <p className="text-slate-400 mt-4">Generating document...</p>
-              </div>
-            )}
-
-            {generatedContent && (
-              <div className="bg-slate-800 border border-slate-700 rounded-lg overflow-hidden flex flex-col h-full">
-                {/* Toolbar */}
-                <div className="bg-slate-700 border-b border-slate-600 px-6 py-3 flex justify-between items-center">
-                  <div className="text-sm text-slate-400">
-                    {tokensUsed} tokens used
-                  </div>
+          {/* Output tile: the dominant bento cell on xl */}
+          <section className={`${tile} md:col-span-2 xl:col-span-8 xl:min-h-[44rem]`}>
+            {generatedContent ? (
+              <>
+                <div className="mb-4 flex items-center justify-between gap-4 border-b border-slate-line pb-4">
+                  <p className="font-mono text-sm text-ivory-82">{tokensUsed} tokens used</p>
                   <div className="flex gap-2">
-                    <button
-                      onClick={handleCopy}
-                      className="px-3 py-1 bg-slate-600 hover:bg-slate-500 text-slate-100 rounded text-sm transition"
-                    >
+                    <button onClick={handleCopy} className={secondaryBtn}>
                       Copy
                     </button>
-                    <button
-                      onClick={handleDownload}
-                      className="px-3 py-1 bg-bronze-600 hover:bg-bronze-700 text-ivory-100 rounded text-sm transition"
-                    >
+                    <button onClick={handleDownload} className={`${primaryBtn} px-3 py-1.5 text-sm`}>
                       Download
                     </button>
                   </div>
                 </div>
-
-                {/* Content */}
-                <div className="p-6 overflow-auto flex-1">
-                  <div className="prose prose-invert max-w-none">
-                    <p className="text-slate-200 whitespace-pre-wrap leading-relaxed">
-                      {generatedContent}
-                    </p>
-                  </div>
+                <div className="flex-1 overflow-auto">
+                  <p className="whitespace-pre-wrap leading-relaxed text-ivory-100">
+                    {generatedContent}
+                  </p>
                 </div>
+              </>
+            ) : state === "generating" ? (
+              <div className="flex flex-1 flex-col items-center justify-center gap-4 text-center">
+                <div className="h-12 w-12 animate-spin border-2 border-slate-line border-t-bronze-600" />
+                <p className="text-ivory-82">Generating document...</p>
+              </div>
+            ) : (
+              <div className="flex flex-1 flex-col items-center justify-center text-center">
+                <p className="max-w-sm text-ivory-82">
+                  Configure your dials and click Generate to create a document.
+                </p>
               </div>
             )}
-          </div>
+          </section>
         </div>
       </div>
     </div>
